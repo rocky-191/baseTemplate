@@ -111,3 +111,11 @@ body{
 .marginBottom{
 	margin-bottom: 30px;
 }
+
+.table_body1 tr{
+	height: 40px;
+	line-height: 40px;
+}
+.table_body1 td{
+	border: 1px solid #dddddd;
+}

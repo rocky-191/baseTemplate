@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<title>多选框和单选框实例</title>
+		<meta http-equiv="keywords" content="">
+	    <meta http-equiv="description" content="">
+	    <!--<meta http-equiv="X-UA-Compatible" content=“IE=EmulateIE8″>-->
+	    <meta http-equiv="X-UA-Compatible" content=”IE=Edge,chrome=1″ />
+	    <meta name="renderer" content="webkit">
+	    <link rel="stylesheet" href="style/css/base/MyReset.css" />
+	    <link rel="stylesheet" href="style/css/common/common.css" />
+	    <link rel="stylesheet" href="style/css/common/main.css" />
+	    <script type="text/javascript" src="style/js/base/jquery-1.9.1.min.js" ></script>
+	    <script type="text/javascript" src="style/js/common/checkboxModal.js" ></script>
+	    <script type="text/javascript" src="style/js/common/RadioCheckModal.js" ></script>
+	</head>
+	<body>
+		<div class="divsection">
+	    	<form>
+	    		<div class="marginBottom">
+					<h3>多选框样式</h1>
+					<table class="base_table">
+						<thead class="table_head">
+							<td width="5%">
+								<div class="base2_checked">
+									<input type="checkbox" class="checkboxclass input checkbox_input" id="formwork_checkbox" onclick="formwork_checkbox_checkAll(event,'formwork_subBox')"/>
+								</div>
+							</td>
+							<td>表头一</td>
+						</thead>
+						<tbody class="table_body">
+							<tr>
+					            <td class="borderLeftNone">
+					                <div class="base2_checked">
+										<input type="checkbox" name="formwork_subBox" class="checkboxclass input checkbox_input" onclick="checkbox_check(event)"/>
+									</div>
+					            </td>
+					            <td>
+					                <label>1</label>
+					            </td>
+					       </tr>
+					       <tr>
+					            <td class="borderLeftNone">
+					                <div class="base2_checked">
+										<input type="checkbox" name="formwork_subBox" class="checkboxclass input checkbox_input" onclick="checkbox_check(event)"/>
+									</div>
+					            </td>
+					            <td>
+					                <label>2</label>
+					            </td>
+					       </tr>
+						</tbody>
+					</table>
+					<p>
+						备注：checkbox多选框样式，全选及单选，改行变色。引入checkboxModal.js,依赖jquery,相关样式在common.css文件中
+					</p>
+				</div>
+				<div>
+					<table class="base_table">
+						<tbody>
+							<tr>
+								<td width="5%">
+									<div class="base2_checkedRadio">
+				    					<input type="radio" class="checkboxclass checkbox_input" name="formwork_subBoxRadio1" onclick="Radio_check(event,'formwork_subBoxRadio1')"/>
+				    				</div>
+								</td>
+								<td>
+									<label>需要</label>
+								</td>
+								<td width="5%">
+									<div class="base2_checkedRadio on_check">
+				    					<input type="radio" class="checkboxclass checkbox_input" name="formwork_subBoxRadio1" onclick="Radio_check(event,'formwork_subBoxRadio1')"/>
+				    				</div>
+								</td>
+								<td>
+									<label>不需要</label>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+	    	</form>
+	   	</div>
+	</body>
+</html>

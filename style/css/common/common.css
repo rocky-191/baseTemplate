@@ -1,0 +1,196 @@
+@CHARSET "UTF-8";
+
+.base_table{
+	width:100%;
+}
+
+.text_align_right{
+	text-align: right;
+	padding-right: 15px;
+}
+
+.text_align_left{
+	text-align: left;
+}
+
+.text_align_center{
+	text-align: center;
+}
+
+
+.table_head{
+	font-family: "微软雅黑";
+	background-color: #f8f8f8;
+	color: #666666;
+	height: 38px;
+	line-height: 38px;
+	border-bottom: 1px solid #dddddd;
+}
+
+.table_body{
+	font-family: "微软雅黑";
+	color: #666666;
+}
+
+.table_body tr{
+	height: 37px;
+	line-height: 37px;
+	border-bottom: 1px solid #DDDDDD;
+}
+
+.Reposition{
+	position: relative;
+}
+
+.mouseCursor{
+	cursor: pointer;
+}
+
+.ClearFloat{
+	clear: both;
+}
+
+.base3{
+	text-align: center;
+	margin-top:50px;
+	margin-bottom:50px;
+}
+
+.base3_btn1,.base3_btn2,.base3_btn3{
+	width: auto;
+	min-width:60px;
+	padding-left: 10px;
+	padding-right: 10px;
+	height: 26px;
+	line-height: 26px;
+	text-align: center;
+	border: none;
+	font-size:16px ;
+	font-weight: normal;
+	font-family: "微软雅黑";
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	outline: none;
+	cursor: pointer;
+}
+
+.base3_btn1{
+	background: #1eb2fc;
+	color: #ffffff;
+}
+
+.base3_btn2{
+	background: #e6e6e6;
+	color: #999999;
+}
+
+.base3_btn3{
+	background: #1eb2fc;
+	color: #ffffff;
+}
+
+.modal{
+	height:auto;
+	border:1px solid #dddddd;
+	border-radius:4px;
+	background:#ffffff;
+	filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#ffffff',endColorStr='#FDFDFD',gradientType='0');
+	background: -moz-linear-gradient(top, #ffffff, #FDFDFD);
+	background: -o-linear-gradient(top,#ffffff, #FDFDFD);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#FDFDFD));
+	position:absolute;
+	z-index:100;
+	min-width:650px;
+}
+
+.modalHead{
+	background: url(../../images/bgIamge.png) repeat;
+	height: 50px;
+	line-height: 50px;
+	text-indent:10px;
+	border-bottom: 1px solid #dddddd;
+}
+
+.modalHeadLabel{	
+	color: #666666;
+	font-family: "微软雅黑";
+	font-size: 16px;
+}
+
+.base_padding_style1{
+	padding-bottom: 1%;
+}
+
+.base_padding_style2{
+	padding-bottom: 0.5%;
+}
+
+.base_padding_style3{
+	padding-bottom: 2%;
+}
+
+.base_padding_style4{
+	padding-bottom: 0.3%;
+}
+
+.base_padding_style5{
+	padding-bottom: 0.6%;
+}
+
+/**2016-3-24 am**/
+.base2_checked {
+	width: 20px;
+	height: 20px;
+	float: left;
+	cursor: pointer;
+	margin-left: 30%;
+	text-align: center;
+	background-image: url(../../images/checkbox.png);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+}
+
+.base2_checkedRadio{
+	width: 20px;
+	height: 20px;
+	float: left;
+	cursor: pointer;
+	margin-left: 35%;
+	text-align: center;
+	background-image: url(../../images/radio.png);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+}
+
+.on_check {
+	background-position: 0 -19px;
+}
+.checkboxclass{
+	opacity: 0;
+	cursor: pointer;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+}
+
+.checkbox_input{
+	width: 20px;
+	height: 30px;
+}
+
+.floatRight{
+	float: right;
+}
+
+.floatRight10{
+	float: right;
+	margin-right: 10px;
+}
+
+.fontWeight{
+	font-weight: bold;
+}
+
+.text_decoration{
+	text-decoration: underline;
+}

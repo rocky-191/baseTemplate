@@ -1,0 +1,113 @@
+@CHARSET "UTF-8";
+body{
+	background: #fbfbfb;
+	font-family: "微软雅黑";
+}
+
+.divsection{
+	width: 100%;
+	min-width: 1200px;
+	/*width: 1200px;*/
+	margin: 0 auto;
+}
+
+.overflowDiv{
+	width: 70px;
+	display: inline-block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.font{
+	font-family: arial;
+}
+
+.font1{
+	font-family: "宋体";
+}
+
+.color_F{
+	color: #FFFFFF;
+}
+
+.color_9{
+	color: #999999;
+}
+
+.color_6{
+	color: #666666;
+}
+
+.color_3{
+	color: #333333;
+}
+
+.inputSy{
+	width: 100px;
+	height: 24px;
+	line-height: 24px;
+	border: 1px solid #dddddd;
+	padding-left: 5px;
+	-webkit-border-radius:1px;
+	-moz-border-radius:1px;
+	border-radius:1px;
+}
+
+.transparentBtn{
+	display: inline-block;
+	text-align: center;
+    color: #00a8ff;
+    border: none;
+    font-family: "微软雅黑";
+    cursor: pointer;
+    outline: none;
+}
+
+.fontSize12{
+	font-size: 12px;
+}
+
+.fontSize14{
+	font-size: 14px;
+}
+
+.fontSize16{
+	font-size: 16px;
+}
+
+.table_td1Align{
+    vertical-align: top;
+    line-height: 25px;
+}
+
+.ContentTable tr{
+	height: 40px;
+	line-height: 40px;
+}
+
+.inputTextArea{
+	height: 100px;
+	width: 100px;
+	border: 1px solid #DDDDDD;
+	resize: none;
+	padding: 5px;
+	font-family: "微软雅黑";
+	color: #666666;
+}
+
+.progressBarBg{
+	height: 12px;
+	background: #eeeeee;
+	width: 270px;
+	display: inline-block;
+}
+
+.progressBar{
+	height: 12px;
+	background: #80bfff;
+}
+
+.marginBottom{
+	margin-bottom: 30px;
+}

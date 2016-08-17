@@ -1,0 +1,19 @@
+.Wdate{
+	border:#dddddd 1px solid;
+	height: 24px;
+    line-height: 24px;
+    border: 1px solid #dddddd;
+    border-radius: 1px;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    color: #666666;
+    font-size: 12px;
+    padding-left: 10px;
+	background:#fff url(calenderIcon.png) no-repeat  97% center;
+}
+.Wdate::-ms-clear{display:none;}
+
+.WdateFmtErr{
+	font-weight:bold;
+	color:red;
+}

@@ -119,3 +119,88 @@ body{
 .table_body1 td{
 	border: 1px solid #dddddd;
 }
+
+.Ct{
+	width: 1200px;
+	margin: 0 auto;
+}
+
+.marginTop20{
+	margin-top: 20px;
+}
+
+.table_Head1{
+	height: 39px;
+	line-height: 39px;
+	border: 1px solid #DDDDDD;
+	border-bottom: none;
+}
+
+.table_Head1 tr{
+	height: 39px;
+	line-height: 39px;
+	border: 1px solid #DDDDDD;
+	border-bottom: none;
+}
+
+.table_body2 tr{
+	height: 35px;
+	line-height: 30px;
+	border: 1px solid #DDDDDD;
+}
+
+.table_body2 td{
+	border-top: 1px solid #DDDDDD ;
+}
+
+.content_foot{
+	height: 49px;
+	line-height: 49px;
+	border: 1px solid #DDDDDD;
+	border-top: none;
+}
+
+.content_foot_page{
+	padding-top: 5px;
+	border: 1px solid #DDDDDD;
+	border-top: none;
+	height: 30px;
+}
+
+.foot_right{
+	float: right;
+	height: 49px;
+	line-height: 49px;
+	padding-right: 20px;
+}
+
+.space{
+	margin-right: 10px;
+}
+
+.go{
+	width: 22px;
+	height: 22px;
+	display: inline-block;
+	*display:inline;
+	*zoom: 1;
+	background: url(../../images/go.png) no-repeat;
+	vertical-align: middle;
+	cursor: pointer;
+	margin-bottom: 3px;
+}
+
+.numInput{
+	width: 40px;
+	*vertical-align: middle;
+	height:18px;
+	line-height: 18px;
+}
+
+.color_Blue{
+	color: #0079b9;
+}
+
+.bgColor{
+	background:#fdfdfd;
+}

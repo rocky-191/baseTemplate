@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<title>弹窗实例</title>
+		<meta http-equiv="keywords" content="">
+	    <meta http-equiv="description" content="">
+	    <!--<meta http-equiv="X-UA-Compatible" content=“IE=EmulateIE8″>-->
+	    <meta http-equiv="X-UA-Compatible" content=”IE=Edge,chrome=1″ />
+	    <meta name="renderer" content="webkit">
+	    <link rel="stylesheet" href="style/css/base/MyReset.css" />
+	    <link rel="stylesheet" href="style/css/common/common.css" />
+	    <link rel="stylesheet" href="style/css/common/main.css" />
+	    <link rel="stylesheet" href="style/css/page/mycss1.css" />
+	    <script type="text/javascript" src="style/js/base/jquery-1.9.1.min.js" ></script>
+	    <script type="text/javascript" src="style/js/common/changeTab.js" ></script>
+	    <script type="text/javascript" src="style/js/common/layer/layer.js" ></script>
+	    <script type="text/javascript" src="style/js/common/laypage/laypage.js" ></script>
+	    <script type="text/javascript" src="style/js/page/myjs1.js" ></script>
+	</head>
+	<body>
+		<div class="Ct">
+			<div class="search_nav">
+	    		<a class="content_btn content_btnClick" onclick="showInfo1(event,'content_btnClick','yjTableDiv')">CPU容量</a>
+	    		<a class="content_btn" onclick="showInfo1(event,'content_btnClick','yjTableDiv1')">内存容量</a>
+	    		<a class="content_btn" onclick="showInfo1(event,'content_btnClick','yjTableDiv2')">存储容量</a>
+    		</div>
+    		<div>
+    			<div id="yjTableDiv">
+		    		<table class="base_table text_align_center border marginTop20" id="yjTable">
+			    		<thead class="table_Head1 color_3 bgColor">
+			    			<td width="10%">序号</td>
+			    			<td width="35%">数据中心</td>
+			    			<td width="35%">容量分配及使用情况（总/剩/使用率）</td>
+			    			<td width="30%">容量用尽时间</td>
+			    		</thead>
+			    		<tbody class="table_body2" id="yjTable_tbody">
+			    			
+			    		</tbody>
+			    	</table>
+			    	<div class="content_foot_page">
+			    		<div class="floatRight" id="contentFootPage">
+			    			
+			    		</div>
+			    	</div>
+			    </div>
+			    <div id="yjTableDiv1" style="display: none;">
+			    	<table class="base_table text_align_center border marginTop20" id="yjTable1">
+			    		<thead class="table_Head1 color_3 bgColor">
+			    			<td width="10%">序号</td>
+			    			<td width="35%">数据中心</td>
+			    			<td width="35%">容量分配及使用情况（总/剩/使用率）</td>
+			    			<td width="30%">容量用尽时间</td>
+			    		</thead>
+			    		<tbody class="table_body2">
+			    			<tr>
+			    				<td>1</td>
+			    				<td>资源池平台_B/数据中心N</td>
+			    				<td>内存容量：800GHZ/28GHZ/96.5%</td>
+			    				<td>2016-3-10</td>
+			    			</tr>
+			    			<tr>
+			    				<td>2</td>
+			    				<td>资源池平台_B/数据中心N</td>
+			    				<td>内存容量：800GHZ/28GHZ/96.5%</td>
+			    				<td>2016-3-10</td>
+			    			</tr>
+			    			<tr>
+			    				<td>3</td>
+			    				<td>资源池平台_B/数据中心N</td>
+			    				<td>内存容量：800GHZ/28GHZ/96.5%</td>
+			    				<td>2016-3-10</td>
+			    			</tr>
+			    			<tr>
+			    				<td>4</td>
+			    				<td>资源池平台_B/数据中心N</td>
+			    				<td>内存容量：800GHZ/28GHZ/96.5%</td>
+			    				<td>2016-3-10</td>
+			    			</tr>
+			    			<tr>
+			    				<td>5</td>
+			    				<td>资源池平台_B/数据中心N</td>
+			    				<td>内存容量：800GHZ/28GHZ/96.5%</td>
+			    				<td>2016-3-10</td>
+			    			</tr>
+			    			<tr>
+			    				<td>6</td>
+			    				<td>资源池平台_B/数据中心N</td>
+			    				<td>内存容量：800GHZ/28GHZ/96.5%</td>
+			    				<td>2016-3-10</td>
+			    			</tr>
+			    			<tr>
+			    				<td>7</td>
+			    				<td>资源池平台_B/数据中心N</td>
+			    				<td>内存容量：800GHZ/28GHZ/96.5%</td>
+			    				<td>2016-3-10</td>
+			    			</tr>
+			    			<tr>
+			    				<td>8</td>
+			    				<td>资源池平台_B/数据中心N</td>
+			    				<td>内存容量：800GHZ/28GHZ/96.5%</td>
+			    				<td>2016-3-10</td>
+			    			</tr>
+			    		</tbody>
+			    	</table>
+			    	<div class="content_foot">
+		            	<div class="foot_right">
+		            		<span class="space">
+		            			<label>1/22 页</label>
+		            		</span>
+		            		<span class="space">
+		            			<a class="color_Blue">上一页</a>
+		            		</span>
+		            		<span class="space">
+		            			<a class="color_Blue">下一页</a>
+		            		</span>
+		            		<span class="space">
+		            			<label>第</label>
+		            			<input type="text" class="inputSy numInput"/>
+		            			<label>页</label>
+		            		</span>
+		            		<div class="go"></div>
+		            	</div>
+		            	<div class="ClearFloat"></div>
+		            </div>
+			    </div>
+			    <div id="yjTableDiv2" style="display: none;">
+			    	<table class="base_table text_align_center border marginTop20" id="yjTable2">
+			    		<thead class="table_Head1 color_3 bgColor">
+			    			<td width="10%">序号</td>
+			    			<td width="35%">数据中心</td>
+			    			<td width="35%">容量分配及使用情况（总/剩/使用率）</td>
+			    			<td width="30%">容量用尽时间</td>
+			    		</thead>
+			    		<tbody class="table_body2">
+			    			<tr>
+			    				<td>1</td>
+			    				<td>资源池平台_C/数据中心N</td>
+			    				<td>存储容量：800GHZ/28GHZ/96.5%</td>
+			    				<td>2016-3-10</td>
+			    			</tr>
+			    			<tr>
+			    				<td>2</td>
+			    				<td>资源池平台_C/数据中心N</td>
+			    				<td>存储容量：800GHZ/28GHZ/96.5%</td>
+			    				<td>2016-3-10</td>
+			    			</tr>
+			    			<tr>
+			    				<td>3</td>
+			    				<td>资源池平台_C/数据中心N</td>
+			    				<td>存储容量：800GHZ/28GHZ/96.5%</td>
+			    				<td>2016-3-10</td>
+			    			</tr>
+			    			<tr>
+			    				<td>4</td>
+			    				<td>资源池平台_C/数据中心N</td>
+			    				<td>存储容量：800GHZ/28GHZ/96.5%</td>
+			    				<td>2016-3-10</td>
+			    			</tr>
+			    			<tr>
+			    				<td>5</td>
+			    				<td>资源池平台_C/数据中心N</td>
+			    				<td>存储容量：800GHZ/28GHZ/96.5%</td>
+			    				<td>2016-3-10</td>
+			    			</tr>
+			    			<tr>
+			    				<td>6</td>
+			    				<td>资源池平台_C/数据中心N</td>
+			    				<td>存储容量：800GHZ/28GHZ/96.5%</td>
+			    				<td>2016-3-10</td>
+			    			</tr>
+			    			<tr>
+			    				<td>7</td>
+			    				<td>资源池平台_C/数据中心N</td>
+			    				<td>存储容量：800GHZ/28GHZ/96.5%</td>
+			    				<td>2016-3-10</td>
+			    			</tr>
+			    			<tr>
+			    				<td>8</td>
+			    				<td>资源池平台_C/数据中心N</td>
+			    				<td>存储容量：800GHZ/28GHZ/96.5%</td>
+			    				<td>2016-3-10</td>
+			    			</tr>
+			    		</tbody>
+			    	</table>
+			    	<div class="content_foot">
+		            	<div class="foot_right">
+		            		<span class="space">
+		            			<label>1/22 页</label>
+		            		</span>
+		            		<span class="space">
+		            			<a class="color_Blue">上一页</a>
+		            		</span>
+		            		<span class="space">
+		            			<a class="color_Blue">下一页</a>
+		            		</span>
+		            		<span class="space">
+		            			<label>第</label>
+		            			<input type="text" class="inputSy numInput"/>
+		            			<label>页</label>
+		            		</span>
+		            		<div class="go"></div>
+		            	</div>
+		            	<div class="ClearFloat"></div>
+		            </div>
+			    </div>
+		    </div>
+            <h3 class="marginTop20">分页插件使用</h3>
+            <div>
+            	<ul id="biuuu_city_list"></ul>
+				<div id="biuuu_city"></div>
+            </div>
+            <div class="marginTop20">
+				<h3>弹出框样式</h3>
+				<input type="button" value="弹出框" id="popModal"/>
+				<p>
+					备注：应用layer插件作为弹窗，iframe嵌套弹出页。弹窗的高度和宽度都可以在js调用的时候控制，弹窗名称可以自己设定。相关查阅API
+				</p>
+			</div>
+		</div>
+	</body>
+</html>

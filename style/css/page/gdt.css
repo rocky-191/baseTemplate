@@ -22,29 +22,41 @@
 	color: #9F9F9F;
 	line-height: 25px;
 }
-#scroll-1 {
+#scroll-1{
     overflow:auto;
-}  
+}
+/**滚动条整体部分***/  
 #scroll-1::-webkit-scrollbar {
     width:10px;
     height:10px;
 }
+/**滚动条的轨道的两端按钮，允许通过点击微调小方块的位置。***/
 #scroll-1::-webkit-scrollbar-button    {
     /*background-color:#fff;*/
 }
+
+/***滚动条的轨道（里面装有Thumb）**/
 #scroll-1::-webkit-scrollbar-track     {
     background:#dfdfdf;
 	border-radius:5px;
 }
+
+/***内层轨道，滚动条中间部分（除去）***/
 #scroll-1::-webkit-scrollbar-track-piece {
 }
+
+/**滚动条里面的小方块，能向上向下移动**/
 #scroll-1::-webkit-scrollbar-thumb{
     background:#888888;
     border-radius:5px;
 }
+
+/**边角，即两个滚动条的交汇处**/
 #scroll-1::-webkit-scrollbar-corner {
     background:#82AFFF;
 }
-#scroll-1::-webkit-scrollbar-resizer  {
+
+/**两个滚动条的交汇处上用于通过拖动调整元素大小的小控件**/
+#scroll-1::-webkit-resizer{
     background:#dfdfdf;
 }

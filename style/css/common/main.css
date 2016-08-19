@@ -204,3 +204,11 @@ body{
 .bgColor{
 	background:#fdfdfd;
 }
+
+.marginTop{
+	margin-top: 10px;
+}
+
+.bgColor_grey{
+	background: #fbfbfb;
+}

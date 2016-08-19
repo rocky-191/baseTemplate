@@ -2,10 +2,17 @@ window.onload=function(){
 	$("#popModal").on("click",function(){
   		layer.open({
 		 	type: 2,//设定弹窗为iframe嵌套页面
-		 	title: ['弹出窗', 'font-size:18px;color:#333333;'],//弹窗标题的内容及对应样式
+		 	title: ['弹出窗', 'font-size:16px;color:#333333;'],//弹窗标题的内容及对应样式
 		 	area: ['720px', '500px'],//弹窗的宽度和高度
-		  	content: ['baseStylePopModal.html', 'no'] //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
-		});
+		 	btn:['确认','取消'],
+		  	content: ['baseStylePopModal.html', 'no'], //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
+			yes: function(){
+		       alert("2"); 
+			},//确认按钮
+			btn2: function(){
+			    layer.closeAll();
+			}//取消按钮
+  		});
   	});
   	//分页
   	//测试数据
@@ -98,18 +105,15 @@ window.onload=function(){
 	//调用分页
 	var num1=5;
 	var pages1 = Math.ceil(table_array.length/num1); //得到总页数
-	var countNum=1;
 	var thisTableDate = function(curr){
 		var tableHtml='',tableLast = curr*num1 - 1;
 		tableLast = tableLast >= table_array.length ? (table_array.length-1) : tableLast;
-		
 		for(var i = (curr*num1 - num1); i <= tableLast; i++){
 			tableHtml+='<tr>';
-			tableHtml+='<td>'+countNum+'</td>';
+			tableHtml+='<td>'+(i+1)+'</td>';
 			tableHtml+='<td><label>'+table_array[i].cell1+'</label></td>';
 			tableHtml+='<td>'+table_array[i].cell2+'</td>';
 			tableHtml+='<td>'+table_array[i].cell3+'</td></tr>';
-			countNum++;
 		}
 	    return tableHtml;
 	};

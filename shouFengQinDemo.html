@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>手风琴实例</title>
+		<meta http-equiv="keywords" content="">
+	    <meta http-equiv="description" content="">
+	    <!--<meta http-equiv="X-UA-Compatible" content=“IE=EmulateIE8″>-->
+	    <meta http-equiv="X-UA-Compatible" content=”IE=Edge,chrome=1″ />
+	    <meta name="renderer" content="webkit">
+	    <link rel="stylesheet" href="style/css/base/MyReset.css" />
+	    <link rel="stylesheet" href="style/css/common/common.css" />
+	    <link rel="stylesheet" href="style/css/common/main.css" />
+	    <link rel="stylesheet" href="style/css/common/leftMenu.css" />
+	    <script type="text/javascript" src="style/js/base/jquery-1.9.1.min.js" ></script>
+	    <script type="text/javascript" src="style/js/common/Event.js" ></script>
+	</head>
+	<body>
+		<div class="Ct marginTop">
+			<p class="fontSize16 color_3 fontWeight marginTop20">类型一</p>
+			<div>
+				<div class="leftMenuTree">
+	        		<div class="leftMenuTree_part">
+	    				<div class="leftMenuTree_partDiv titleClick" onclick="showList(this,'titleClick')">
+	    					<label class="menuLabel">场景配置</label>
+	    					<div name="mark" class="showicon"></div>
+	    				</div>
+	    				<div name="mark1">
+	    					<ul class="menu_ul">
+	    						<li class="liClick" onclick="changeMenu(event,'liClick','wy_iframe1')">业务大类配置</li>
+	    						<li onclick="changeMenu(event,'liClick','wy_iframe2')">业务小类配置</li>
+	    						<li onclick="changeMenu(event,'liClick','wy_iframe3')">小区配置</li>
+	    					</ul>
+	    				</div>
+	    			</div>
+	    			<div class="leftMenuTree_part">
+	    				<div class="leftMenuTree_partDiv" onclick="showList(this,'titleClick')">
+	    					<label class="menuLabel">告警配置</label>
+	    					<div name="mark" class="showiconClick"></div>
+	    				</div>
+	    				<div name="mark1" style="display: none;">
+	    					<ul class="menu_ul">
+	    						<li onclick="changeMenu(event,'liClick','wy_iframe4')">HTTP访问成功率</li>
+	    						<li onclick="changeMenu(event,'liClick','')">HTTP相应平均时延</li>
+	    						<li onclick="changeMenu(event,'liClick','')">HTTP平均响应时延</li>
+	    						<li onclick="changeMenu(event,'liClick','')">HTTP平均下载速率</li>
+	    					</ul>
+	    				</div>
+	    			</div>
+	    		</div>
+	    		<!--
+	            	描述：右侧内容
+	            -->
+	            <iframe id="wy_iframe1" src="wyIframe1.html" frameBorder="0" scrolling="auto" width="970px"></iframe>
+	            <iframe id="wy_iframe2" src="wyIframe2.html" frameBorder="0" scrolling="auto" width="970px" style="display: none;"></iframe>
+	            <iframe id="wy_iframe3" src="wyIframe3.html" frameBorder="0" scrolling="auto" width="970px" style="display: none;"></iframe>
+	            <iframe id="wy_iframe4" src="wyIframe4.html" frameBorder="0" scrolling="auto" width="970px" style="display: none;"></iframe>
+	    		<div class="ClearFloat"></div>
+	    	</div>
+    		<p class="marginTop20">
+    			<label class="fontSize16 color_3 fontWeight">备注:</label>
+    			<label class="fontSize14">该手风琴实例可以同时实现右侧内容以iframe展现，点击切换右侧内容。</label>
+    		</p>
+		</div>
+	</body>
+</html>

@@ -11,13 +11,15 @@
 }*/
 
 /**左侧菜单树***/
-function showList(obj,name){
+function showList(obj,className){
 	if($(obj).next().length!=0){
 		$(obj).next().toggle();
 		var state=$(obj).next().css("display");
 		if(state=="none"){
 			$(obj).find("div[name='mark']").removeClass("showicon").addClass("showiconClick");
+			$(obj).removeClass(className);
 		}else{
+			$(obj).addClass(className);
 			$(obj).find("div[name='mark']").removeClass("showiconClick").addClass("showicon");
 		}		
 	}

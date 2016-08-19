@@ -1,0 +1,88 @@
+body{
+	background: #fff;
+}
+
+.MidContent {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.leftArrowIcon,.rightArrowIcon{
+	position: absolute;
+	top:34px;
+	width: 26px;
+	height: 26px;
+	outline: none;
+	z-index: 10;
+	cursor: pointer;
+}
+
+.leftArrowIcon{
+	left: 5px;
+	background: url(../../images/left.png) no-repeat;
+}
+
+.rightArrowIcon{
+	right: 5px;
+	background: url(../../images/right.png) no-repeat;
+}
+
+.content_head1{
+	width: 998px;
+	overflow:hidden;
+	margin-left: 2px;
+	margin-bottom: 15px;
+}
+
+.content_head1_section{
+	width: 138px;
+	height: 90px;
+	float: left;
+	display: inline-block;
+	background: #f8f8f8;
+	-webkit-border-radius:5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;	
+	text-align: center;
+}
+
+.content_head1Margin{
+	margin-left: 5px;
+}
+
+.content_head1Margin1{
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+/**swiper***/
+.pagination {
+  position: absolute;
+  z-index: 20;
+  top: 80px;	
+  width: 100%;
+  text-align: center;
+}
+.swiper-pagination-switch {
+  display: inline-block;
+  width: 18px;
+  height: 6px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  background: red;
+  margin: 0 2px;
+  cursor: pointer;
+}
+.swiper-active-switch {
+  background: blue;
+}
+
+.swiperDiv{
+	height: 100px;
+	background: green;
+	color: #fff;
+	font-size: 20px;
+	line-height: 100px;
+	text-align: center;
+}

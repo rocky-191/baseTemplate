@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<title>轮播实例</title>
+		<meta http-equiv="keywords" content="">
+	    <meta http-equiv="description" content="">
+	    <!--<meta http-equiv="X-UA-Compatible" content=“IE=EmulateIE8″>-->
+	    <meta http-equiv="X-UA-Compatible" content=”IE=Edge,chrome=1″ />
+	    <meta name="renderer" content="webkit">
+	    <link rel="stylesheet" href="style/css/base/MyReset.css" />
+	    <link rel="stylesheet" href="style/css/common/common.css" />
+	    <link rel="stylesheet" href="style/css/common/main.css" />
+	    <link rel="stylesheet" href="style/css/common/idangerous.swiper.css" />
+	    <link rel="stylesheet" href="style/css/page/lunBo.css" />
+	    <script type="text/javascript" src="style/js/base/jquery-1.9.1.min.js" ></script>
+	    <script type="text/javascript" src="style/js/common/ScrollPic.js" ></script>
+	    <script type="text/javascript" src="style/js/common/idangerous.swiper.min.js" ></script>
+	    <script type="text/javascript" src="style/js/page/lunBo.js" ></script>
+	</head>
+	<body>
+		<div class="MidContent">
+			<p class="marginTop20">
+				<label class="fontSize16 color_3 fontWeight">类型一</label>
+				<label>（左右箭头切换轮播，需要引入ScrollPic.js,依赖jquery，并进行初始化）</label>
+			</p>
+			<div id="scrollSec" class="Reposition marginTop">
+    			<!--
+                	描述：左右箭头切换
+                -->
+                <div class="leftArrowIcon" id="leftArrow" style="display: none;"></div>
+                <div class="rightArrowIcon" id="rightArrow" style="display: none;"></div>
+    			<div class="content_head1" id="content_head1_scroll">
+    				<div class="content_head1_section">
+    					内容1
+    				</div>
+    				<div class="content_head1_section content_head1Margin">
+    					内容2
+    				</div>
+    				<div class="content_head1_section content_head1Margin">
+    					内容3
+    				</div>
+    				<div class="content_head1_section content_head1Margin">
+    					内容4
+    				</div>
+    				<div class="content_head1_section content_head1Margin">
+    					内容5
+    				</div>
+    				<div class="content_head1_section content_head1Margin">
+    					内容6
+    				</div>
+    				<div class="content_head1_section content_head1Margin">
+    					内容7
+    				</div>
+    				<div class="content_head1_section content_head1Margin">
+    					内容8
+    				</div>
+    				<div class="content_head1_section content_head1Margin1">
+    					内容9
+    				</div>
+    			</div>
+    		</div>
+    		<p class="marginTop20">
+				<label class="fontSize16 color_3 fontWeight">类型二</label>
+				<label>（利用swiper.js切换轮播）,更多设置查看官网</label>
+				<a href="http://2.swiper.com.cn/" target="_blank">http://2.swiper.com.cn/</a>
+			</p>
+			<div class="Reposition">
+				<div class="swiper-container">
+				  <div class="swiper-wrapper">
+				    <div class="swiper-slide">
+				    	<div class="swiperDiv">
+				    		内容一
+				    	</div>
+				    </div>
+				    <div class="swiper-slide">
+				    	<div class="swiperDiv">
+				    		内容二
+				    	</div>
+				    </div>
+				    <div class="swiper-slide">
+				    	<div class="swiperDiv">
+				    		内容三
+				    	</div>
+				    </div>
+				  </div>
+				  <!--<div class="swiper-pagination"></div>-->
+				  <div class="pagination"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,75 @@
+.leftMenuTree{
+	width: 228px;
+	border: 1px solid #DDDDDD;
+	border-bottom: none;
+	background: #ffffff;
+	float: left;
+	overflow: auto;
+	min-height: 500px;
+	height: auto;
+	border-bottom: 1px solid #DDDDDD;
+}
+
+.leftMenuTree_partDiv{
+	height: 50px;
+    line-height: 50px;
+    cursor: pointer;
+    padding-left: 10px;
+    position: relative;
+    background: #f3f3f3;
+}
+
+.titleClick{
+	padding-left: 8px;
+	border-left: 2px solid #1185c2;
+}
+
+.menuLabel{
+	color:#333333;
+	font-size: 14px;
+}
+
+.showicon{
+	width: 11px;
+	height: 6px;
+	display: inline-block;
+	cursor: pointer;
+	background: url(../../images/Ularrow.png) no-repeat;
+	position: absolute;
+	top: 45%;
+	right: 7%;
+}
+
+.showiconClick{
+	width: 6px;
+	height: 11px;
+	display: inline-block;
+	cursor: pointer;
+	background: url(../../images/UlarrowClick.png) no-repeat;
+	position: absolute;
+	top: 35%;
+	right: 7%;
+}
+
+.menu_ul li{
+	cursor: pointer;
+	height: 36px;
+	line-height: 36px;
+	padding-left:40px;
+	/*border-bottom: 1px solid #DDDDDD;*/
+}
+
+.menu_ul .liClick{
+	background: #f1fcfe;
+	color: #0085d0;
+	/*padding-left: 28px;
+	border-left:2px solid #00a3ff;*/
+}
+
+/**2016-5-31 am***/
+.divClick{
+	background: #f1fcfe;
+	color: #0085d0;
+	padding-left: 8px;
+	border-left:2px solid #00a3ff;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<title>日历时间控件实例</title>
+		<meta http-equiv="keywords" content="">
+	    <meta http-equiv="description" content="">
+	    <!--<meta http-equiv="X-UA-Compatible" content=“IE=EmulateIE8″>-->
+	    <meta http-equiv="X-UA-Compatible" content=”IE=Edge,chrome=1″ />
+	    <meta name="renderer" content="webkit">
+	    <link rel="stylesheet" href="style/css/base/MyReset.css" />
+	    <link rel="stylesheet" href="style/css/common/common.css" />
+	    <link rel="stylesheet" href="style/css/common/main.css" />
+	    <link rel="stylesheet" href="style/css/page/calDate.css" />
+	    <script type="text/javascript" src="style/js/base/jquery-1.9.1.min.js" ></script>
+	    <script type="text/javascript" src="style/js/common/WdatePicker.js" ></script>
+	</head>
+	<body>
+		<div class="Ct">
+			<p class="marginTop20">
+				<label class="fontSize16 color_3 fontWeight">类型一</label>
+				<label>（结束时间大于起始时间类型）</label>
+			</p>
+			<table class="base_table marginTop">
+				<tr>
+					<td width="10%" class="text_align_right">
+						<label>起止时间</label>
+					</td>
+					<td width="18%">
+						<input type="text" id="chushi_time" class="inputSy log_Input1 Wdate" onClick="WdatePicker({maxDate:'#F{$dp.$D(\'final_time\')}'})"/>
+					</td>
+					<td width="5%" class="text_align_center">
+						——
+					</td>
+					<td>
+						<input type="text" id="final_time" class="inputSy log_Input1 Wdate" onClick="WdatePicker({minDate:'#F{$dp.$D(\'chushi_time\')}'})"/>
+					</td>
+				</tr>
+			</table>
+			<p class="marginTop20">
+				<label class="fontSize16 color_3 fontWeight">类型二</label>
+				<label>只有年月日，无时分秒格式</label>
+			</p>
+			<table class="base_table marginTop">
+				<tr>
+					<td width="10%" class="text_align_right">
+						<label>发起时间</label>
+					</td>
+					<td>
+						<input type="text" class="inputSy log_Input1 Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})"/>
+					</td>
+				</tr>
+			</table>
+			<p class="marginTop20">
+				<label class="fontSize16 color_3 fontWeight">类型三</label>
+				<label>无日历小图标，时分秒格式</label>
+			</p>
+			<table class="base_table marginTop">
+				<tr>
+					<td width="10%" class="text_align_right">
+						<label>发起时间</label>
+					</td>
+					<td>
+						<input type="text" class="inputSy log_Input1" onClick="WdatePicker({skin:'whyGreen',dateFmt:'H:mm:ss'})"/>
+					</td>
+				</tr>
+			</table>
+			<p class="marginTop20">
+				<label>更多类型请查看API,网址&nbsp;&nbsp;</label><a href="http://www.my97.net/" target="_blank">http://www.my97.net/</a>
+			</p>
+		</div>
+	</body>
+</html>

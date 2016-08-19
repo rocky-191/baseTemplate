@@ -149,6 +149,10 @@ body{
 	border: 1px solid #DDDDDD;
 }
 
+.table_body2 tr:nth-child(2n+1){
+	background:#f3fcff;
+}
+
 .table_body2 td{
 	border-top: 1px solid #DDDDDD ;
 }
@@ -211,4 +215,12 @@ body{
 
 .bgColor_grey{
 	background: #fbfbfb;
+}
+
+.table_body3 tr{
+	height:65px;
+}
+
+.color_red{
+	color: red;
 }

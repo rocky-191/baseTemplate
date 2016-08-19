@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<title>进度条实例</title>
+		<meta http-equiv="keywords" content="">
+	    <meta http-equiv="description" content="">
+	    <!--<meta http-equiv="X-UA-Compatible" content=“IE=EmulateIE8″>-->
+	    <meta http-equiv="X-UA-Compatible" content=”IE=Edge,chrome=1″ />
+	    <meta name="renderer" content="webkit">
+	    <link rel="stylesheet" href="style/css/base/MyReset.css" />
+	    <link rel="stylesheet" href="style/css/common/common.css" />
+	    <link rel="stylesheet" href="style/css/common/main.css" />
+	    <link rel="stylesheet" href="style/css/page/progress.css" />
+	</head>
+	<body>
+		<div class="Ct">
+			<p class="marginTop20">
+				<label class="fontSize16 color_3 fontWeight">类型一</label>
+			</p>
+			<div class="progress_Box" id="progressBox">
+				<div class="progress_Bar" id="progressBar">0%</div>
+				<div class="progress_Text" id="progressText">0%</div>
+			</div>
+			<p class="marginTop20">
+				<label class="fontSize16 color_3 fontWeight">类型二</label>
+			</p>
+			<table class="base_table marginTop">
+				<tbody class="table_body3">
+					<tr>
+						<td width="20%" class="text_align_right">
+							<label class="color_8">CPU使用情况：</label>
+						</td>
+						<td class="Reposition">
+							<div class="kr_progressBarBg" id="krProgressBarBg"></div>
+							<div class="kr_progressBar" id="krProgressBar"></div>
+							<div class="kr_progressNum" id="krProgressNum"></div>
+							<span class="progressTotel color_8">总量：260HZ</span>
+							<span class="progressRest color_8" id="progressRestNum">剩余：15GHZ</span>
+						</td>
+					</tr>
+					<tr>
+						<td class="text_align_right">
+							<label class="color_8">储存使用情况：</label>
+						</td>
+						<td class="Reposition">
+							<div class="kr_progressBarBg"></div>
+							<div class="kr_progressBar2"></div>
+							<div class="kr_progressNum2">90.5%</div>
+							<span class="progressTotel color_8">总量：260HZ</span>
+							<span class="progressRest color_8">剩余：15GHZ</span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="marginTop">
+				<label class="color_red">备注：CPU使用情况的进度条数值通过后台传入变化</label>
+			</p>
+		</div>
+		<script type="text/javascript" src="style/js/page/progress.js" ></script>
+	</body>
+</html>

@@ -1,0 +1,76 @@
+@CHARSET "UTF-8";
+
+.ywPart1{
+	width: 310px;
+	margin: 0 auto;
+	padding: 20px 10px 20px 30px;
+}
+
+/**蜂巢样式***/
+.hex { 
+    float: left; 
+    margin-left: 2px; 
+    margin-bottom: -18px;
+    cursor: pointer; 
+} 
+.hex .hex_top { 
+    width: 0; 
+    border-bottom: 20px solid #f0f0f0; 
+    border-left: 35px solid transparent; 
+    border-right: 35px solid transparent;
+    margin-top: -1px\9\0;
+    margin-top: 0px\0; 
+} 
+.hex .hex_middle { 
+    width: 70px; 
+    height: 30px;
+    line-height: 30px; 
+    background: #f0f0f0;
+    text-align: center;
+    font-family: "宋体";
+    color: #333333; 
+} 
+.hex .hex_bottom { 
+    width: 0; 
+    border-top: 20px solid #f0f0f0; 
+    border-left: 35px solid transparent; 
+    border-right: 35px solid transparent; 
+    margin-top: -1px\9\0;
+    margin-top: 0px\0; 
+} 
+.hex-row { 
+    clear: left; 
+} 
+.hex-row.even { 
+    margin-left: 38px; 
+}
+.hex-row.odd { 
+    margin-right: 38px; 
+}
+
+.hex.hexActive .hex_top { 
+    width: 0; 
+    border-bottom: 20px solid #86ccac; 
+    border-left: 35px solid transparent; 
+    border-right: 35px solid transparent;
+    margin-top: -1px\9\0;
+    margin-top: 0px\0; 
+} 
+.hex.hexActive .hex_middle { 
+    width: 70px; 
+    height: 30px;
+    line-height: 30px; 
+    background: #86ccac;
+    text-align: center;
+    font-family: "宋体";
+    color: #FFFFFF; 
+} 
+.hex.hexActive .hex_bottom { 
+    width: 0; 
+    border-top: 20px solid #86ccac; 
+    border-left: 35px solid transparent; 
+    border-right: 35px solid transparent;
+    margin-top: -1px\9\0;
+    margin-top: 0px\0;  
+}
+/**蜂巢样式***/

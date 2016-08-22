@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>内容tip实例</title>
+		<meta http-equiv="keywords" content="">
+	    <meta http-equiv="description" content="">
+	    <!--<meta http-equiv="X-UA-Compatible" content=“IE=EmulateIE8″>-->
+	    <meta http-equiv="X-UA-Compatible" content=”IE=Edge,chrome=1″ />
+	    <meta name="renderer" content="webkit">
+	    <link rel="stylesheet" href="style/css/base/MyReset.css" />
+	    <link rel="stylesheet" href="style/css/common/common.css" />
+	    <link rel="stylesheet" href="style/css/common/Source/jBox.css" />
+	    <link rel="stylesheet" href="style/css/common/tip-violet/tip-violet.css" />
+	    <link rel="stylesheet" href="style/css/common/main.css" />
+	    <link rel="stylesheet" href="style/css/page/myTip.css" />
+	</head>
+	<body>
+		<div class="Ct">
+			<p class="marginTop20 marginBottom">
+				<label class="fontSize16 fontWeight color_3">类型一</label>
+				<label>利用jbox插件</label>
+			</p>
+			<span class="fontSize16 marginTop" id="testJBox">hover me</span>
+			<p class="marginTop20">
+				<label class="fontWeight fontSize14">备注：首先需要引入jBox.css和jBox.js，该插件依赖jquery，需要提前引入jquery,<label class="color_red">兼容IE8+及其他主流浏览器</label>。之后进行初始化，进行相应配置。更多功能及配置请查看API，网址：</label>
+				<a href="http://stephanwagner.me/jBox/get_started" target="_blank">http://stephanwagner.me/jBox/get_started</a>
+			</p>
+			<p class="marginTop20 marginBottom">
+				<label class="fontSize16 fontWeight color_3">类型二</label>
+			</p>
+			<div>
+				<span class="fontSize16 marginTop mouseCursor" id="testPoshytip">hover me now!</span>
+			</div>
+			<p class="marginTop20">
+				<label class="fontWeight fontSize14">备注：首先需要引入tip-violet.css和jquery.poshytip.min.js，该插件依赖jquery，需要提前引入jquery,<label class="color_red">可以兼容IE7哦！！</label>。之后进行初始化，进行相应配置。更多功能及配置请查看API，网址：</label>
+				<a href="http://vadikom.com/demos/poshytip/" target="_blank">http://vadikom.com/demos/poshytip/</a>
+			</p>
+			<p class="marginTop20 marginBottom">
+				<label class="fontSize16 fontWeight color_3">类型三</label>
+			</p>
+			<div class="Reposition">
+				<div>
+					<span class="fontSize16 marginTop mouseCursor" id="testMyTip">hover me now quickly!</span>
+				</div>
+				<div class="myTipContent" style="display: none;">
+					<div class="myTipArrow"></div>
+					this is a tip
+				</div>
+			</div>
+			<p class="marginTop20">
+				<label class="fontWeight fontSize14">备注：自定义hover实现</label>
+			</p>
+		</div>
+		<script type="text/javascript" src="style/js/base/jquery-1.9.1.min.js" ></script>
+		<script type="text/javascript" src="style/js/common/jBox.js" ></script>
+		<script type="text/javascript" src="style/js/common/jquery.poshytip.min.js" ></script>
+		<script type="text/javascript" src="style/js/page/myToolTip.js" ></script>
+	</body>
+</html>

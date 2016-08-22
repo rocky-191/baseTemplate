@@ -1,0 +1,17 @@
+.myTipContent{
+	width: 300px;
+	height: 200px;
+	z-index: 100;
+	border: 1px solid #DDDDDD;
+	background: #fff;
+	position: absolute;
+}
+
+.myTipArrow{
+	position: absolute;
+	top: -8px;
+	left: 100px;
+	width: 16px;
+	height: 10px;
+	background: url(../../images/tip-arrows2.png) no-repeat;
+}

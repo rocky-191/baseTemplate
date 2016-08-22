@@ -224,3 +224,26 @@ body{
 .color_red{
 	color: red;
 }
+
+.table_Head2{
+	background: #f8f8f8;
+	font-family: "黑体";
+	font-size: 16px;
+	font-weight: normal;
+	height: 50px;
+	line-height: 50px;
+	border: 1px solid #dddddd;
+}
+
+.tableBorder tr{
+	height: 50px;
+	line-height: 50px;
+}
+
+.tableBorder td{
+	border: 1px solid #dddddd;
+}
+
+.bgColor_f{
+	background: #fff;
+}

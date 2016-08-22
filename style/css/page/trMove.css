@@ -1,0 +1,15 @@
+@CHARSET "UTF-8";
+
+.base4_table_img1{
+	position: absolute;
+	top:32%;
+	right:2%;
+	cursor: pointer;
+}
+
+.base4_table_img2{
+	position: absolute;
+	top:55%;
+	right:2%;
+	cursor: pointer;
+}

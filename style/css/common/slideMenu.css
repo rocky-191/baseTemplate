@@ -1,0 +1,80 @@
+#navSy1Sy1 { 
+line-height: 24px; 
+list-style-type: none; 
+background:#666; 
+} 
+#navSy1 a { 
+display: block; 
+width: 120px; 
+text-align:center; 
+} 
+#navSy1 a:link { 
+color:#ffffff; 
+text-decoration:none; 
+} 
+#navSy1 a:visited { 
+color:#ffffff;
+text-decoration:none; 
+} 
+#navSy1 a:hover { 
+color:#FFF;
+text-decoration:none;
+/*font-weight:bold; */
+} 
+#navSy1 li { 
+float: left; 
+width: 120px; 
+background:#1185c2;
+color: #ffffff; 
+height: 40px;
+line-height: 40px;
+} 
+#navSy1 li a:hover{ 
+background:#33a9e6; 
+} 
+#navSy1 li ul { 
+line-height: 27px; 
+list-style-type: none;
+text-align:left; 
+left: -999em; 
+width: 118px; 
+position: absolute; 
+border:1px solid #dddddd;
+border-top: none;
+} 
+#navSy1 li ul li{ 
+float: left; 
+width: 118px; 
+border-top: 1px solid #dddddd;
+color:#999999;
+background: #fdfdfd; 
+} 
+#navSy1 li ul a{
+	 wedisplay: block; 
+	 width: 118px;
+	 text-align:center;
+	 /*padding-left:24px;*/ 
+} 
+#navSy1 li ul a:link { 
+color:#666; 
+text-decoration:none; 
+} 
+#navSy1 li ul a:visited { 
+color:#666;
+text-decoration:none; 
+} 
+#navSy1 li ul a:hover { 
+color:#ffffff;
+text-decoration:none;
+font-weight:normal; 
+background:#ECBC71; 
+} 
+#navSy1 li:hover ul { 
+left: auto; 
+} 
+#navSy1 li.sfhover ul { 
+left: auto; 
+} 
+#content { 
+clear: left; 
+} 

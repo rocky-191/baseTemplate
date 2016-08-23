@@ -1,0 +1,10 @@
+@CHARSET "UTF-8";
+
+.box{ width:400px; margin:0 auto;}
+.box ul{ height:40px;}
+.box ul li{ float:left; width:100px; color:#fff; text-align:center; line-height:40px;background:#00b6ea;}
+.box ul li.now{ color:#F60; border-bottom:solid 2px #FF6600;}
+
+.list,.list1{ margin-top:20px}
+.list div,.list1 div{ color:#666;width: 200px;text-align: center;}
+.list div.text,.list1 div.text{  display:none;}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<title>分栏等高实例</title>
+		<meta http-equiv="keywords" content="">
+	    <meta http-equiv="description" content="">
+	    <!--<meta http-equiv="X-UA-Compatible" content=“IE=EmulateIE8″>-->
+	    <meta http-equiv="X-UA-Compatible" content=”IE=Edge,chrome=1″ />
+	    <meta name="renderer" content="webkit">
+	    <link rel="stylesheet" href="style/css/base/MyReset.css" />
+	    <link rel="stylesheet" href="style/css/common/common.css" />
+	    <link rel="stylesheet" href="style/css/common/main.css" />
+	    <link rel="stylesheet" href="style/css/page/sameHeight.css" />
+	</head>
+	<body>
+		<p class="marginTop20">
+			<label class="fontSize14 color_3 fontWeight">类型一：纯css</label>
+		</p>
+		<div class="layout">
+		    <aside class="layout__col layout__aside">左侧边栏宽度固定</aside>
+		    <div class="layout__col layout__main">内容栏宽度自适应</br>高度增加一点，旁边的高度都会自动增加</div>
+		    <aside class="layout__col layout__aside">右侧边栏宽度固定</aside>
+		</div>
+		<p class="marginTop20">
+			<label class="fontSize14 color_3 fontWeight">类型一：依靠js实现</label>
+		</p>
+		<div class="marginTop">
+			<div class="sameHeight leftDiv">
+				左侧内容左侧内容左侧内容左侧内容左侧内容左侧内容左侧内容左侧内容左侧内容
+			</div>
+			<div class="sameHeight rightDiv">
+				右侧内容
+			</div>
+		</div>
+	<script type="text/javascript" src="style/js/base/jquery-1.9.1.min.js" ></script>
+	<script>
+		window.onload=function(){
+			//设置等高
+			setHeight("sameHeight");
+		};
+	
+		function setHeight(class1){
+			var $columns = $('.'+class1);
+			var height = 0;
+			$columns.each(function () {  
+				if($(this).height() > height) {    
+					height = $(this).height();  
+				}
+			});
+			$columns.height(height);
+		}
+	</script>
+	</body>
+</html>

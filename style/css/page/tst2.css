@@ -1,0 +1,14 @@
+/*声明变量*/
+/*调用变量*/
+body {
+  color: #000;
+  border: 1px dotted #000;
+  width: 1000px;
+  margin: 0 auto;
+}
+.testDiv {
+  width: 1000px;
+  margin: 0 auto;
+  background: #e15b5b;
+  height: 200px;
+}

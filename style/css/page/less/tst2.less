@@ -1,0 +1,23 @@
+/*声明变量*/
+
+@mainColor: #000;
+@siteWidth: 1000px;
+@borderStyle: dotted;
+@divCenter:0 auto;
+/*调用变量*/
+body {                                
+  color: @mainColor;                  
+  border:1px @borderStyle @mainColor; 
+  width: @siteWidth;
+  margin: @divCenter;              
+}
+
+@bgColor:#e15b5b;
+@textCenter:center;
+@spHeight:200px;
+.testDiv{
+    width: @siteWidth;
+    margin: @divCenter;
+    background: @bgColor;
+    height: @spHeight;
+} 

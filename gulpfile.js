@@ -4,12 +4,12 @@ var gulp = require('gulp'), //本地安装gulp所用到的地方
     livereload = require('gulp-livereload');
 
 //定义一个testless任务
-/*gulp.task('testless', function() {
-    gulp.src('style/less/*.less')
+gulp.task('testless', function() {
+    gulp.src('style/css/page/less/*.less')
         .pipe(less())
-        .pipe(gulp.dest('style/css/common'))
+        .pipe(gulp.dest('style/css/page'))
         .pipe(livereload());
-});*/
+});
 
 //定义一个testCss任务（自定义任务名称）
 gulp.task('testCss', function () {

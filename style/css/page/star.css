@@ -1,0 +1,18 @@
+@CHARSET "UTF-8";
+
+.chrome{margin-bottom:4em;}
+.chrome>input{position:relative;margin-right:1em;border:0;background:transparent;color:gold;-webkit-transition:color .8s;
+  transition:color .8s;}
+.chrome>input:nth-of-type(1){display:none;}
+.chrome>input:before{position:absolute;content:"★";left:0;top:0;font-size:36px;height:100%;width:100%;background: #fbfbfb;cursor:pointer;}
+.chrome>input:checked~input{color:#666;}
+
+.all>input{opacity:0;position:absolute;width:2em;height:2em;margin:0;cursor:pointer;}
+.all>input:nth-of-type(1),
+.all>span:nth-of-type(1){display:none;}
+.all>span{font-size:2em;color:gold;
+  -webkit-transition:color .8s;
+  transition:color .8s;
+}
+.all>input:checked~span{color:#666;}
+.all>input:checked+span{color:gold;}

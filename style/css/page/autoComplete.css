@@ -1,0 +1,12 @@
+@CHARSET "UTF-8";
+
+.autoInput1{
+	height: 30px;
+	line-height: 30px;
+	width: 150px;
+}
+
+.autocomplete-suggestions { border: 1px solid #999; background: #FFF; overflow: auto; }
+.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
+.autocomplete-selected { background: #fffdf0;height: 26px;line-height: 26px; }
+.autocomplete-suggestions strong { font-weight: normal; color: #3399FF;height: 26px;line-height: 26px;  }

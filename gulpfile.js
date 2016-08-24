@@ -7,7 +7,7 @@ var gulp = require('gulp'), //本地安装gulp所用到的地方
 /*gulp.task('testless', function() {
     gulp.src('style/less/*.less')
         .pipe(less())
-        .pipe(gulp.dest('src/css'))
+        .pipe(gulp.dest('style/css/common'))
         .pipe(livereload());
 });*/
 

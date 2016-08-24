@@ -1,0 +1,42 @@
+@CHARSET "UTF-8";
+
+.box{
+	/*width: 1200px;*/
+	margin: 0 auto;
+	border: 1px solid;
+	overflow: hidden;
+}
+.box-left{
+	width: 220px;
+	background: red;
+	height: 300px;
+	float: left;
+}
+.box-middle{
+	margin-left: 220px;
+	margin-right: 150px;
+}
+.box-right{
+	width: 150px;
+	float: right;
+	height: 300px;
+	background: #ccc;
+}
+
+/**，左侧内容定宽，右侧内容自适应样式***/
+.box1{
+	/*width: 1200px;*/
+	margin: 0 auto;
+	border: 1px solid;
+	overflow: hidden;
+}
+.box1-left{
+	width: 220px;
+	background: red;
+	height: 300px;
+	float: left;
+}
+.box1-right{
+	margin-left: 220px;
+	background: #ccc;
+}

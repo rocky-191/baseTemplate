@@ -38,6 +38,59 @@ function changeMenu(event,className1,id1){
 	}
 }
 
+//三级导航
+function changeMenu1(obj,className1,id1,sfqFlag){
+	//var p1=$(obj).siblings();
+	$(obj).addClass(className1);
+	if(sfqFlag=="sqfFlag1"){
+		var sfq_p1=$(obj).parent();
+		sfq_p1.siblings().find("div.sfq_first").removeClass(className1);
+		sfq_p1.siblings().find("div.sfq_second").removeClass(className1);
+		sfq_p1.siblings().find("ul.sfq_second_ul li").removeClass(className1);
+		if($(obj).next().length!=0){
+			$(obj).next().toggle();
+			$(obj).next().find("div.sfq_second").removeClass(className1);		
+			var state=$(obj).next().css("display");
+			if(state=="none"){
+				$(obj).find("div[name='mark']").removeClass("sfq_icon").addClass("sfq_icon1");
+			}else{
+				$(obj).find("div[name='mark']").removeClass("sfq_icon1").addClass("sfq_icon");
+			}
+		}
+	}else if(sfqFlag=="sqfFlag2"){
+		var p=$(obj).parent();
+		var p0=p.parent().parent();
+		$(obj).next().find("li").removeClass(className1);
+		p0.prev().removeClass(className1);
+		p.siblings().find("div.sfq_second").removeClass(className1);
+		p.siblings().find("ul.sfq_second_ul li").removeClass(className1);
+		p0.parent().parent().find("div.sfq_first").removeClass(className1);
+		if($(obj).next().length!=0){
+			$(obj).next().toggle();
+			var state2=$(obj).next().css("display");
+			if(state2=="none"){
+				$(obj).find("div[name='mark']").removeClass("sfq_icon").addClass("sfq_icon1");
+			}else{
+				$(obj).find("div[name='mark']").removeClass("sfq_icon1").addClass("sfq_icon");
+			}
+		}
+	}else{
+		$(obj).siblings().removeClass(className1);
+		var p1=$(obj).parent();
+		var p3=p1.parent();
+		var p2=p3.parent().parent();
+		p1.prev().removeClass(className1);
+		p2.prev().removeClass(className1);
+		p3.siblings().find("div.sfq_second").removeClass(className1);
+		p3.siblings().find("ul.sfq_second_ul li").removeClass(className1);
+		p2.parent().siblings().find("div.sfq_first").removeClass(className1);
+	}
+	if(id1){
+		$("#"+id1).show();
+		$("#"+id1).siblings().hide();
+	}
+}
+
 function changeMenuTab(obj,className1,name,id1){
 	if($(obj).next().length!=0){
 		$(obj).next().toggle();

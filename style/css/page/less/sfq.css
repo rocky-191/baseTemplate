@@ -1,0 +1,52 @@
+.sfq_first,
+.sfq_second {
+  height: 36px;
+  line-height: 36px;
+  cursor: pointer;
+  position: relative;
+}
+.sfq_first {
+  padding-left: 25px;
+}
+.sfq_second {
+  padding-left: 15px;
+}
+.sfq_icon {
+  position: absolute;
+  top: 15px;
+  left: 10px;
+  width: 10px;
+  height: 6px;
+  background: url(../../../images/sfq_icon.png) no-repeat;
+}
+.sfq_icon1 {
+  position: absolute;
+  top: 13px;
+  left: 10px;
+  width: 6px;
+  height: 10px;
+  background: url(../../../images/sfq_icon1.png) no-repeat;
+}
+.spLeft {
+  left: 25px;
+}
+.sfq_first_ul li,
+.sfq_second_ul li {
+  cursor: pointer;
+  line-height: 36px;
+}
+.sfq_second_ul li {
+  padding-left: 55px;
+}
+.sfq_first_ul .liClick {
+  background: #f1fcfe;
+  color: #0085d0;
+}
+.liClick {
+  background: #f1fcfe;
+  color: #0085d0;
+}
+.paddingLeft25 {
+  padding-left: 25px;
+}
+/*# sourceMappingURL=sfq.css.map */

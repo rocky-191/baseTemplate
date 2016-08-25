@@ -12,8 +12,7 @@
 	    <link rel="stylesheet" href="style/css/common/common.css" />
 	    <link rel="stylesheet" href="style/css/common/main.css" />
 	    <link rel="stylesheet" href="style/css/common/leftMenu.css" />
-	    <script type="text/javascript" src="style/js/base/jquery-1.9.1.min.js" ></script>
-	    <script type="text/javascript" src="style/js/common/Event.js" ></script>
+	    <link rel="stylesheet" href="style/css/page/less/sfq.css" />
 	</head>
 	<body>
 		<div class="Ct marginTop">
@@ -61,6 +60,63 @@
     			<label class="fontSize16 color_3 fontWeight">备注:</label>
     			<label class="fontSize14">该手风琴实例可以同时实现右侧内容以iframe展现，点击切换右侧内容。</label>
     		</p>
+    		<p class="marginTop20">
+    			<label class="fontSize16 color_3 fontWeight">类型二</label>
+    			<label class="fontSize14">三级导航</label>
+    		</p>
+    		<div class="leftMenuTree">
+    			<div class="leftMenuTree_part">
+    				<div class="sfq_first" onclick="changeMenu1(this,'liClick','','sqfFlag1')">
+    					<label class="menuLabel">场景配置</label>
+    					<div name="mark" class="sfq_icon"></div>
+    				</div>
+    				<div name="mark1">
+    					<ul class="sfq_first_ul">
+    						<li>
+    							<div class="sfq_second" onclick="changeMenu1(this,'liClick','','sqfFlag2')">
+	    							<div class="paddingLeft25">业务大类配置</div>
+	    							<div name="mark" class="sfq_icon spLeft"></div>
+	    						</div>
+	    						<ul class="sfq_second_ul">
+	    							<li onclick="changeMenu1(this,'liClick','','sqfFlag3')">业务大类配置1</li>
+	    							<li onclick="changeMenu1(this,'liClick','','sqfFlag3')">业务大类配置2</li>
+	    							<li onclick="changeMenu1(this,'liClick','','sqfFlag3')">业务大类配置3</li>
+	    						</ul>
+    						</li>
+    						<li>
+    							<div class="sfq_second" onclick="changeMenu1(this,'liClick','','sqfFlag2')">
+	    							<div class="paddingLeft25">业务小类配置</div>
+	    							<div name="mark" class="sfq_icon1 spLeft"></div>
+	    						</div>
+	    						<ul class="sfq_second_ul" style="display: none;">
+	    							<li onclick="changeMenu1(this,'liClick','','sqfFlag3')">业务小类配置1</li>
+	    							<li onclick="changeMenu1(this,'liClick','','sqfFlag3')">业务小类配置2</li>
+	    							<li onclick="changeMenu1(this,'liClick','','sqfFlag3')">业务小类配置3</li>
+	    						</ul>
+    						</li>
+    						<li>
+    							<div class="sfq_second" onclick="changeMenu1(this,'liClick','','sqfFlag2')">
+	    							<div class="paddingLeft25">小区配置</div>
+	    							<div name="mark" class="sfq_icon1 spLeft"></div>
+	    						</div>
+	    						<ul class="sfq_second_ul" style="display: none;">
+	    							<li onclick="changeMenu1(this,'liClick','','sqfFlag3')">小区配置1</li>
+	    							<li onclick="changeMenu1(this,'liClick','','sqfFlag3')">小区配置2</li>
+	    							<li onclick="changeMenu1(this,'liClick','','sqfFlag3')">小区配置3</li>
+	    						</ul>
+    						</li>
+    					</ul>
+    				</div>
+    			</div>
+    			<div class="leftMenuTree_part">
+    				<div class="sfq_first liClick" onclick="changeMenu1(this,'liClick','','sqfFlag1')">
+    					<label class="menuLabel">告警配置</label>
+    					<!--<div name="mark" class="sfq_icon1"></div>-->
+    				</div>
+    			</div>
+    		</div>
 		</div>
+	<script type="text/javascript" src="style/js/base/jquery-1.9.1.min.js" ></script>
+	<script type="text/javascript" src="style/js/common/Event.js" ></script>
 	</body>
 </html>

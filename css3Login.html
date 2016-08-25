@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<title>css3下登录实例</title>
+		<meta http-equiv="keywords" content="">
+	    <meta http-equiv="description" content="">
+	    <!--<meta http-equiv="X-UA-Compatible" content=“IE=EmulateIE8″>-->
+	    <meta http-equiv="X-UA-Compatible" content=”IE=Edge,chrome=1″ />
+	    <meta name="renderer" content="webkit">
+	    <link rel="stylesheet" href="style/css/base/MyReset.css" />
+	    <link rel="stylesheet" href="style/css/common/common.css" />
+	    <link rel="stylesheet" href="style/css/common/main.css" />
+	    <link rel="stylesheet" href="style/css/page/login.css" />
+	</head>
+	<body>
+		<div class="Ct">
+			<div class="marginTop20">
+				<label class="color_3 fontSize16 fontWeight">该登录样式利用css3的相关样式，不兼容低版本浏览器，尽量使用现代浏览器</label>
+			</div>
+		</div>
+		<div class="htmleaf-container">
+			<div class="wrapper">
+				<div class="container">
+					<h1>Welcome</h1>	
+					<form class="form">
+						<input type="text" placeholder="Username">
+						<input type="password" placeholder="Password">
+						<button type="submit" id="login-button">Login</button>
+					</form>
+				</div>
+				<ul class="bg-bubbles">
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+		</div>
+	<script type="text/javascript" src="style/js/base/jquery-1.9.1.min.js" ></script>
+	<script>
+		$('#login-button').click(function (event) {
+			event.preventDefault();
+			//未进行登录验证
+			$('form').fadeOut(500);
+			$('.wrapper').addClass('form-success');
+		});
+	</script>
+	</body>
+</html>

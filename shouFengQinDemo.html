@@ -66,55 +66,75 @@
     		</p>
     		<div class="leftMenuTree">
     			<div class="leftMenuTree_part">
-    				<div class="sfq_first" onclick="changeMenu1(this,'liClick','','sqfFlag1')">
+    				<div class="sfq_first" onclick="changeMenu1(this,'liClick','sfqFirst1_Content1','sqfFlag1')">
     					<label class="menuLabel">场景配置</label>
     					<div name="mark" class="sfq_icon"></div>
     				</div>
     				<div name="mark1">
     					<ul class="sfq_first_ul">
     						<li>
-    							<div class="sfq_second" onclick="changeMenu1(this,'liClick','','sqfFlag2')">
+    							<div class="sfq_second" onclick="changeMenu1(this,'liClick','sfqFirst2_Content1','sqfFlag2')">
 	    							<div class="paddingLeft25">业务大类配置</div>
 	    							<div name="mark" class="sfq_icon spLeft"></div>
 	    						</div>
 	    						<ul class="sfq_second_ul">
-	    							<li onclick="changeMenu1(this,'liClick','','sqfFlag3')">业务大类配置1</li>
-	    							<li onclick="changeMenu1(this,'liClick','','sqfFlag3')">业务大类配置2</li>
-	    							<li onclick="changeMenu1(this,'liClick','','sqfFlag3')">业务大类配置3</li>
+	    							<li onclick="changeMenu1(this,'liClick','sfqFirst3_Content1','sqfFlag3')">业务大类配置1</li>
+	    							<li onclick="changeMenu1(this,'liClick','sfqFirst3_Content2','sqfFlag3')">业务大类配置2</li>
+	    							<li onclick="changeMenu1(this,'liClick','sfqFirst3_Content3','sqfFlag3')">业务大类配置3</li>
 	    						</ul>
     						</li>
     						<li>
-    							<div class="sfq_second" onclick="changeMenu1(this,'liClick','','sqfFlag2')">
+    							<div class="sfq_second" onclick="changeMenu1(this,'liClick','sfqFirst2_Content2','sqfFlag2')">
 	    							<div class="paddingLeft25">业务小类配置</div>
 	    							<div name="mark" class="sfq_icon1 spLeft"></div>
 	    						</div>
 	    						<ul class="sfq_second_ul" style="display: none;">
-	    							<li onclick="changeMenu1(this,'liClick','','sqfFlag3')">业务小类配置1</li>
-	    							<li onclick="changeMenu1(this,'liClick','','sqfFlag3')">业务小类配置2</li>
-	    							<li onclick="changeMenu1(this,'liClick','','sqfFlag3')">业务小类配置3</li>
+	    							<li onclick="changeMenu1(this,'liClick','sfqFirst3_Content4','sqfFlag3')">业务小类配置1</li>
+	    							<li onclick="changeMenu1(this,'liClick','sfqFirst3_Content5','sqfFlag3')">业务小类配置2</li>
+	    							<li onclick="changeMenu1(this,'liClick','sfqFirst3_Content6','sqfFlag3')">业务小类配置3</li>
 	    						</ul>
     						</li>
     						<li>
-    							<div class="sfq_second" onclick="changeMenu1(this,'liClick','','sqfFlag2')">
+    							<div class="sfq_second" onclick="changeMenu1(this,'liClick','sfqFirst2_Content3','sqfFlag2')">
 	    							<div class="paddingLeft25">小区配置</div>
 	    							<div name="mark" class="sfq_icon1 spLeft"></div>
 	    						</div>
 	    						<ul class="sfq_second_ul" style="display: none;">
-	    							<li onclick="changeMenu1(this,'liClick','','sqfFlag3')">小区配置1</li>
-	    							<li onclick="changeMenu1(this,'liClick','','sqfFlag3')">小区配置2</li>
-	    							<li onclick="changeMenu1(this,'liClick','','sqfFlag3')">小区配置3</li>
+	    							<li onclick="changeMenu1(this,'liClick','sfqFirst3_Content7','sqfFlag3')">小区配置1</li>
+	    							<li onclick="changeMenu1(this,'liClick','sfqFirst3_Content8','sqfFlag3')">小区配置2</li>
+	    							<li onclick="changeMenu1(this,'liClick','sfqFirst3_Content9','sqfFlag3')">小区配置3</li>
 	    						</ul>
     						</li>
     					</ul>
     				</div>
     			</div>
     			<div class="leftMenuTree_part">
-    				<div class="sfq_first liClick" onclick="changeMenu1(this,'liClick','','sqfFlag1')">
+    				<div class="sfq_first liClick" onclick="changeMenu1(this,'liClick','sfqFirst1_Content2','sqfFlag1')">
     					<label class="menuLabel">告警配置</label>
     					<!--<div name="mark" class="sfq_icon1"></div>-->
     				</div>
     			</div>
     		</div>
+    		<!--
+            	时间：2016-08-26
+            	描述：三级导航对应内容
+            -->
+            <div>
+            	<div id="sfqFirst1_Content1" style="display: none;">场景配置导航对应内容</div>
+            	<div id="sfqFirst1_Content2">告警配置导航对应内容</div>
+            	<div id="sfqFirst2_Content1" style="display: none;">业务大类配置导航对应内容</div>
+            	<div id="sfqFirst2_Content2" style="display: none;">业务小类配置导航对应内容</div>
+            	<div id="sfqFirst2_Content3" style="display: none;">小区配置导航对应内容</div>
+            	<div id="sfqFirst3_Content1" style="display: none;">业务大类配置导航对应内容1</div>
+            	<div id="sfqFirst3_Content2" style="display: none;">业务大类配置导航对应内容2</div>
+            	<div id="sfqFirst3_Content3" style="display: none;">业务大类配置导航对应内容3</div>
+            	<div id="sfqFirst3_Content4" style="display: none;">业务小类配置导航对应内容1</div>
+            	<div id="sfqFirst3_Content5" style="display: none;">业务小类配置导航对应内容2</div>
+            	<div id="sfqFirst3_Content6" style="display: none;">业务小类配置导航对应内容3</div>
+            	<div id="sfqFirst3_Content7" style="display: none;">小区配置导航对应内容1</div>
+            	<div id="sfqFirst3_Content8" style="display: none;">小区配置导航对应内容2</div>
+            	<div id="sfqFirst3_Content9" style="display: none;">小区配置导航对应内容3</div>
+            </div>
 		</div>
 	<script type="text/javascript" src="style/js/base/jquery-1.9.1.min.js" ></script>
 	<script type="text/javascript" src="style/js/common/Event.js" ></script>

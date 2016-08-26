@@ -40,13 +40,14 @@ function changeMenu(event,className1,id1){
 
 //三级导航
 function changeMenu1(obj,className1,id1,sfqFlag){
-	//var p1=$(obj).siblings();
 	$(obj).addClass(className1);
+	//sqfFlag1一级导航标记，sqfFlag2二级导航标记，sqfFlag3三级导航标记
 	if(sfqFlag=="sqfFlag1"){
 		var sfq_p1=$(obj).parent();
-		sfq_p1.siblings().find("div.sfq_first").removeClass(className1);
-		sfq_p1.siblings().find("div.sfq_second").removeClass(className1);
-		sfq_p1.siblings().find("ul.sfq_second_ul li").removeClass(className1);
+		var mySiblings=sfq_p1.siblings();
+		mySiblings.find("div.sfq_first").removeClass(className1);
+		mySiblings.find("div.sfq_second").removeClass(className1);
+		mySiblings.find("ul.sfq_second_ul li").removeClass(className1);
 		if($(obj).next().length!=0){
 			$(obj).next().toggle();
 			$(obj).next().find("div.sfq_second").removeClass(className1);		
@@ -85,7 +86,7 @@ function changeMenu1(obj,className1,id1,sfqFlag){
 		p3.siblings().find("ul.sfq_second_ul li").removeClass(className1);
 		p2.parent().siblings().find("div.sfq_first").removeClass(className1);
 	}
-	if(id1){
+	if(id1 && id1!=""){
 		$("#"+id1).show();
 		$("#"+id1).siblings().hide();
 	}

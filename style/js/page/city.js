@@ -1,7 +1,157 @@
+var cityFlag1=false,cityFlag2=false,cityFlag3=false,cityArray=[],cityArray1=[],cityArray2=[];
+$(function(){
+	var proInput=$("#provence");
+	var proContent=$(".js-proContent");
+	var dsInput=$("#ds");
+	var dsContent=$(".js-dsContent");
+	var xjsInput=$("#xjs");
+	var xjsContent=$(".js-xjsContent");
+	var vs,proValue,dsValue,xjsValue,proValue1,dsValue1,xjsValue1;
+	proInput.on("focus click",function(){
+		dsContent.html("");
+		dsContent.hide();
+		xjsContent.html("");
+		xjsContent.hide();
+		dsInput.val("");
+		xjsInput.val("");
+		vs = new game();
+		proContent.show();
+	});
+	mouseOutHide("js-proLi","js-proContent");
+	mouseOutHide("js-dsLi","js-dsContent");
+	mouseOutHide("js-xjsLi","js-xjsContent");
+	//省份输入内容自动检索
+	proInput.on("input propertychange",function(){
+		cityArray=[];
+		proValue1=proInput.val();
+		for(var i=0,len1=vs.A.length;i<len1;i++){
+			if(vs.A[i].indexOf(proValue1)>-1){
+				cityArray.push(vs.A[i]);
+			}
+		}
+		console.log(cityArray+" 省份");
+		cityArray = unique(cityArray);
+		if(cityArray.length>0){
+			var cityHtml1="";
+			for(var i=0,len2=cityArray.length;i<len2;i++){
+				cityHtml1+="<li value=" + i + ">" + cityArray[i] + "</li>";
+			}
+			proContent.html(cityHtml1);
+			$(".js-proContent li").on("click",function(){
+				var self=this;
+				var sfValue=$(self).text();
+				$("#provence").val(sfValue);
+				proIndex=$(self).index();
+				$(".js-proContent").html("");
+				$(".js-proContent").hide();
+				//cityFlag1=true;
+			});
+		}
+	});
+	dsInput.on("focus click",function(){
+		proContent.html("");
+		proContent.hide();
+		xjsContent.html("");
+		xjsContent.hide();
+		if(proInput.val()!=""){
+			msIndex1=vs.A.indexOf(proInput.val());
+			xjsInput.val("");
+			console.log(vs.B[msIndex1]);
+			if(cityFlag1){
+				vs.class_B(proIndex);
+			}else{
+				vs.class_B(msIndex1);
+			}
+			dsContent.show();
+		}
+	});
+	//地市输入内容自动检索
+	dsInput.on("input propertychange",function(){
+		cityArray1=[];
+		msIndex4=vs.A.indexOf(proInput.val());
+		dsValue1=dsInput.val();
+		for(var i=0,len3=vs.B[msIndex4].length;i<len3;i++){
+			if(vs.B[msIndex4][i].indexOf(dsValue1)>-1){
+				cityArray1.push(vs.B[msIndex4][i]);
+			}
+		}
+		cityArray1 = unique(cityArray1);
+		if(cityArray1.length>0){
+			var cityHtml2="";
+			for(var i=0,len4=cityArray1.length;i<len4;i++){
+				cityHtml2+="<li value=" + i + ">" + cityArray1[i] + "</li>";
+			}
+			dsContent.html(cityHtml2);
+			$(".js-dsContent li").on("click",function(){
+				var self=this;
+				var sfValue=$(self).text();
+				$("#ds").val(sfValue);
+				dsIndex=$(self).index();
+				$(".js-dsContent").html("");
+				$(".js-dsContent").hide();
+			});
+		}
+	});
+	xjsInput.on("focus click",function(){
+		proContent.html("");
+		proContent.hide();
+		dsContent.html("");
+		dsContent.hide();
+		if(proInput.val()!="" || dsInput.val()!=""){
+			msIndex2=vs.A.indexOf(proInput.val());
+			msIndex3=vs.B[msIndex2].indexOf(dsInput.val());
+			console.log(msIndex2+" "+msIndex3);
+			console.log(cityFlag1+" "+cityFlag2);
+			console.log(vs.C[msIndex2][msIndex3]);
+			if(cityFlag1 && cityFlag2){
+				//vs.class_C(proIndex,dsIndex);//有bug
+				vs.class_C(msIndex2,msIndex3);
+			}else if(!cityFlag1 && cityFlag2){
+				//vs.class_C(msIndex2,dsIndex);
+				vs.class_C(msIndex2,msIndex3);
+			}
+			else if(cityFlag1 && !cityFlag2){
+				vs.class_C(proIndex,msIndex3);
+			}
+			else if(!cityFlag1 && !cityFlag2){
+				vs.class_C(msIndex2,msIndex3);
+			}
+			xjsContent.show();
+		}
+	});
+	//县级市输入内容自动检索
+	xjsInput.on("input propertychange",function(){
+		cityArray2=[];
+		msIndex5=vs.A.indexOf(proInput.val());
+		msIndex6=vs.B[msIndex5].indexOf(dsInput.val());
+		xjsValue1=xjsInput.val();
+		for(var i=0,len5=vs.C[msIndex5][msIndex6].length;i<len5;i++){
+			if(vs.C[msIndex5][msIndex6][i].indexOf(xjsValue1)>-1){
+				cityArray2.push(vs.C[msIndex5][msIndex6][i]);
+			}
+		}
+		console.log(cityArray2);
+		cityArray2 = unique(cityArray2);
+		if(cityArray2.length>0){
+			var cityHtml3="";
+			for(var i=0,len6=cityArray2.length;i<len6;i++){
+				cityHtml3+="<li value=" + i + ">" + cityArray2[i] + "</li>";
+			}
+			xjsContent.html(cityHtml3);
+			$(".js-xjsContent li").on("click",function(){
+				var self=this;
+				var sfValue=$(self).text();
+				$("#xjs").val(sfValue);
+				dsIndex=$(self).index();
+				$(".js-xjsContent").html("");
+				$(".js-xjsContent").hide();
+			});
+		}
+	});
+});
 var game = function() {
-	this.A = ["省份", "北京市", "天津市", "上海市", "重庆市", "河北省", "山西省", "辽宁省", "吉林省", "黑龙江省", "江苏省", "浙江省", "安徽省", "福建省", "江西省", "山东省", "河南省", "湖北省", "湖南省", "广东省", "海南省", "四川省", "贵州省", "云南省", "陕西省", "甘肃省", "内蒙古自治区", "广西壮族自治区", "西藏自治区", "宁夏回族自治区"];
+	this.A = ["北京市", "天津市", "上海市", "重庆市", "河北省", "山西省", "辽宁省", "吉林省", "黑龙江省", "江苏省", "浙江省", "安徽省", "福建省", "江西省", "山东省", "河南省", "湖北省", "湖南省", "广东省", "海南省", "四川省", "贵州省", "云南省", "陕西省", "甘肃省", "内蒙古自治区", "广西壮族自治区", "西藏自治区", "宁夏回族自治区","新疆维吾尔自治区"];
 	this.B = [
-		["地级市"],
 		["北京市"],
 		["天津市"],
 		["上海市"],
@@ -27,15 +177,13 @@ var game = function() {
 		["昆明市","曲靖市","玉溪市","昭通市","保山市","丽江市","普洱市","临沧市","德宏傣族景颇族自治州","怒江傈僳族自治州","迪庆藏族自治州","大理白族自治州","楚雄彝族自治州","红河哈尼族彝族自治州","文山壮族苗族自治州","西双版纳傣族自治州"],
 		["西安市","宝鸡市","咸阳市","渭南市","铜川市","延安市","榆林市","安康市","汉中市","商洛市","杨凌示范区"],
 		["兰州市","嘉谷关市","金昌市","白银市","天水市","酒泉市","张掖市","定西市","陇南市","平凉市","庆阳市","临夏回族自治州","甘南藏族自治州"],
-		["呼和浩特市","包头市","乌海市","赤峰市","通辽市","鄂尔多斯市","呼伦贝尔市","巴彦淖尔市,乌兰察布市","兴安盟","锡林郭勒盟","阿拉善盟"],
+		["呼和浩特市","包头市","乌海市","赤峰市","通辽市","鄂尔多斯市","呼伦贝尔市","巴彦淖尔市","乌兰察布市","兴安盟","锡林郭勒盟","阿拉善盟"],
 		["南宁市","柳州市","桂林市","梧州市","北海市","防城港市","钦州市","贵港市","玉林市","百色市","贺州市","河池市","来宾市","崇左市"],
 		["拉萨市","昌都市","日喀则市","林芝市","山南市","那曲地区","阿里地区"],
 		["银川市","石嘴山市","吴忠市","固原市","中卫市"],
+		["乌鲁木齐市","克拉玛依市","吐鲁番地区","哈密地区","昌吉回族自治州","博尔塔拉蒙古自治州","巴音郭楞蒙古自治州","阿克苏地区","克孜勒苏柯尔克孜自治州","喀什地区","和田地区","伊犁哈萨克自治州","塔城地区","阿勒泰地区","自治区直辖县级行政单位"],
 	];
 	this.C = [
-		[
-			["市/县级市"],
-		],
 		[
 			["东城区", "西城区", "朝阳区", "丰台区", "石景山区", "海淀区", "顺义区", "通州区", "大兴区", "房山区", "门头沟区", "昌平区", "平谷区", "密云区", "怀柔区", "延庆区"],
 		],
@@ -416,41 +564,85 @@ var game = function() {
 			["原州区","西吉县","隆德县","泾源县","彭阳县"],
 			["沙坡头区","中宁县","海原县"],
 		],
+		[
+			["天山区","沙依巴克区","新市区","水磨沟区","头屯河区","达坂城区","米东区","乌鲁木齐县"],
+			["独山子区","克拉玛依区","白碱滩区","乌尔禾区"],
+			["吐鲁番市","鄯善县","托克逊县"],
+			["哈密市","巴里坤哈萨克自治县","伊吾县"],
+			["昌吉市","阜康市","呼图壁县","玛纳斯县","奇台县","吉木萨尔县","木垒哈萨克自治县"],
+			["博乐市","精河县","温泉县"],
+			["库尔勒市","轮台县","尉犁县","若羌县","且末县","焉耆回族自治县","和静县","和硕县","博湖县"],
+			["阿克苏市","温宿县","库车县","沙雅县","新和县","拜城县","乌什县","阿瓦提县","柯坪县"],
+			["阿图什市","阿克陶县","阿合奇县","乌恰县"],
+			["喀什市","疏附县","疏勒县","英吉沙县","泽普县","莎车县","叶城县","麦盖提县","岳普湖县","伽师县","巴楚县","塔什库尔干塔吉克自治县"],
+			["和田市","和田县","墨玉县","皮山县","洛浦县","策勒县","于田县","民丰县"],
+			["伊宁市","奎屯市","伊宁县","察布查尔锡伯自治县","霍城县","巩留县","新源县","昭苏县","特克斯县","尼勒克县"],
+			["塔城市","乌苏市","额敏县","沙湾县","托里县","裕民县","和布克赛尔蒙古自治县"],
+			["阿勒泰市","布尔津县","富蕴县","福海县","哈巴河县","青河县","吉木乃县"],
+			["石河子市","阿拉尔市","图木舒克市","五家渠市"],
+		],
 	];
-	this.a = $("#a");
-	this.b = $("#b");
-	this.c = $("#c");
+	this.a = $("#provence");
+	this.b = $("#ds");
+	this.c = $("#xjs");
 	this.start();
 }
+
 game.prototype = {
 	start: function() {
 		this.class_A();
-		this.monitor();
+		//this.monitor();
 	},
 	class_A: function() {
 		var sum = '';
 		var s = this.A;
 		for (var i = 0; i < s.length; i++) {
-			sum += "<option value=" + i + ">" + s[i] + "</option>";
+			sum += "<li value=" + i + ">" + s[i] + "</li>";
 		}
-		this.a.html(sum);
+		this.a.next("ul").html(sum);
+		$(".js-proContent li").on("click",function(){
+			var self=this;
+			var sfValue=$(self).text();
+			$("#provence").val(sfValue);
+			proIndex=$(self).index();
+			$(".js-proContent").html("");
+			$(".js-proContent").hide();
+			cityFlag1=true;
+		});
 	},
 	class_B: function(x) {
 		var sum = '';
 		var s = this.B[x];
 		for (var i = 0; i < s.length; i++) {
-			sum += "<option value=" + i + ">" + s[i] + "</option>";
+			sum += "<li value=" + i + ">" + s[i] + "</li>";
 		}
-		this.b.html(sum);
+		this.b.next("ul").html(sum);
+		$(".js-dsContent li").on("click",function(){
+			var self=this;
+			var sfValue=$(self).text();
+			$("#ds").val(sfValue);
+			dsIndex=$(self).index();
+			$(".js-dsContent").html("");
+			$(".js-dsContent").hide();
+			cityFlag2=true;
+		});
 	},
 	class_C: function(x, y) {
 		var sum = '';
 		var s = this.C[x][y];
-		console.log(s);
 		for (var i = 0; i < s.length; i++) {
-			sum += "<option value=" + i + ">" + s[i] + "</option>";
+			sum += "<li value=" + i + ">" + s[i] + "</li>";
 		}
-		this.c.html(sum);
+		this.c.next("ul").html(sum);
+		$(".js-xjsContent li").on("click",function(){
+			var self=this;
+			var sfValue=$(self).text();
+			$("#xjs").val(sfValue);
+			dsIndex=$(self).index();
+			$(".js-xjsContent").html("");
+			$(".js-xjsContent").hide();
+			cityFlag3=true;
+		});
 	},
 	monitor: function() {
 		var self = this;
@@ -467,4 +659,25 @@ game.prototype = {
 		});
 	}
 }
-var s = new game();
+
+//数组去重
+function unique(a) {
+  var res = [];
+
+  for (var i = 0, len = a.length; i < len; i++) {
+    var item = a[i];
+
+    (res.indexOf(item) === -1) && res.push(item);
+  }
+
+  return res;
+}
+
+function mouseOutHide(className1,className2){
+	$("."+className1).mouseout(function(){
+		$("."+className2).hide();
+		$("."+className2).mouseover(function(){
+			$(this).show();
+		});
+	});
+}

@@ -1,10 +1,11 @@
 $(document).ready(function() { 
-  var countries = [
-	   { value: 'aos', data: 'AD' },
-	   { value: 'Zimbabwe', data: 'ZZ1' },
-	   { value: 'asd', data: 'ZZ2' },
-	   { value: 'abs', data: 'ZZ3' },
-	];
+//var countries = [
+//	   { value: 'aos', data: 'AD' },
+//	   { value: 'Zimbabwe', data: 'ZZ1' },
+//	   { value: 'asd', data: 'ZZ2' },
+//	   { value: 'abs', data: 'ZZ3' },
+//	];
+		var countries=["aos","ad","dfasd"];
  
 $('#autocomplete').autocomplete({
     lookup: countries,

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>全国城市三级联动实例</title>
+		<meta http-equiv="keywords" content="">
+	    <meta http-equiv="description" content="">
+	    <!--<meta http-equiv="X-UA-Compatible" content=“IE=EmulateIE8″>-->
+	    <meta http-equiv="X-UA-Compatible" content=”IE=Edge,chrome=1″ />
+	    <meta name="renderer" content="webkit">
+	    <link rel="stylesheet" href="style/css/base/MyReset.css" />
+	    <link rel="stylesheet" href="style/css/common/common.css" />
+	    <link rel="stylesheet" href="style/css/common/main.css" />
+	    <style>
+			.cityUl>li{
+				float: left;
+				height: 40px;
+				line-height: 40px;
+				text-align: center;
+				padding-left: 5px;
+				padding-right: 5px;
+				position: relative;
+			}
+			.dmContent{
+				position: absolute;
+				top: 32px;
+				z-index: 10;
+				border: 1px solid #0072ff;
+				padding: 5px;
+				width: 300px;
+				display: none;
+			}
+			.dmContent>li{
+				float: left;
+				padding-left: 5px;
+				padding-right: 5px;
+				cursor: pointer;
+			}
+			.dmContent>li:hover{
+				background: #9dc8fc;
+				color: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="Ct">
+			<ul class="cityUl">
+				<li>
+					<label>省份</label>
+				</li>
+				<li>
+					<input type="text" class="inputSy" id="provence"/>
+					<ul class="dmContent js-proContent">
+						
+					</ul>
+				</li>
+				<li>
+					<label>地级市</label>
+				</li>
+				<li>
+					<input type="text" class="inputSy" id="ds"/>
+					<ul class="dmContent js-dsContent">
+						
+					</ul>
+				</li>
+				<li>
+					<label>市/县级市</label>
+				</li>
+				<li>
+					<input type="text" class="inputSy" id="xjs"/>
+					<ul class="dmContent js-xjsContent">
+						
+					</ul>
+				</li>
+			</ul>
+		</div>
+	<script type="text/javascript" src="style/js/base/jquery-1.9.1.min.js" ></script>
+	<script type="text/javascript" src="style/js/page/city.js" ></script>
+	</body>
+</html>

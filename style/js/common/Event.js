@@ -154,3 +154,41 @@ function startInit(iframeId, minHeight) {
     eval("window.IE9MoreRealHeight" + iframeId + "=0");
     window.setInterval("reinitIframe('" + iframeId + "'," + minHeight + ")", 200);
 }
+
+//随机数
+function Random(start,end){    
+    return Math.random()*(end-start)+start;    
+}
+
+//随机整数
+function randNum(minnum , maxnum){
+    return Math.floor(minnum + Math.random() * (maxnum - minnum));
+}
+
+//randNum(0,10),生成0到9的随机整数
+
+//获取元素样式
+function GetCurrentStyle (obj, prop) {
+	//obj为目标对象
+    if (obj.currentStyle) {        
+        return obj.currentStyle[prop];     
+    }      
+    else if (window.getComputedStyle) {        
+        propprop = prop.replace (/([A-Z])/g, "-$1");           
+        propprop = prop.toLowerCase ();        
+        return document.defaultView.getComputedStyle (obj,null)[prop];     
+    }      
+    return null;   
+}
+
+//检测IE
+var isIE = function(ver){
+	var b = document.createElement('b')
+	b.innerHTML = '<!--[if IE ' + ver + ']><i></i><![endif]-->'
+	return b.getElementsByTagName('i').length === 1
+}
+
+//如果只想检测是不是IE，而不关心浏览器版本，那只需要在调用函数的时候，不传递参数即可。
+//var ie = isIE()
+
+//alert('ie6:' + isIE(6) + '\n' + 'ie7:' + isIE(7) + '\n' + 'ie8:' + isIE(8) + '\n' + 'ie9:' + isIE(9) + '\n' + 'ie:' + isIE())

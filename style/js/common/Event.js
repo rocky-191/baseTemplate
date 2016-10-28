@@ -192,3 +192,13 @@ var isIE = function(ver){
 //var ie = isIE()
 
 //alert('ie6:' + isIE(6) + '\n' + 'ie7:' + isIE(7) + '\n' + 'ie8:' + isIE(8) + '\n' + 'ie9:' + isIE(9) + '\n' + 'ie:' + isIE())
+
+//获取兄弟节点
+function siblings(elm) {
+	var a = [];
+	var p = elm.parentNode.children;
+	for(var i =0,pl= p.length;i<pl;i++) {
+		if(p[i] !== elm) a.push(p[i]);
+	}
+	return a;
+}

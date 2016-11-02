@@ -123,6 +123,7 @@ function suggest(){
                 that.sLi[iNow].className = 'active';                     
              }else if(ev.keyCode == 13){
              	that.sInput.value = that.sLi[iNow].innerHTML;
+             	that.sUl.style.display = 'none';
              }
          }
  	}

@@ -504,3 +504,17 @@ own.getCookie = function(cname) {
     }
     return '';
 };
+
+//获取元素样式，如GetCurrentStyle(s,"display")
+function GetCurrentStyle (obj, prop) {
+	//obj为目标对象
+    if (obj.currentStyle) {        
+        return obj.currentStyle[prop];     
+    }      
+    else if (window.getComputedStyle) {        
+        propprop = prop.replace (/([A-Z])/g, "-$1");           
+        propprop = prop.toLowerCase ();        
+        return document.defaultView.getComputedStyle (obj,null)[prop];     
+    }      
+    return null;   
+} 

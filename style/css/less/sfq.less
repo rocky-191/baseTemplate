@@ -1,0 +1,77 @@
+/*声明变量*/
+
+@mainColor: #000;
+@siteWidth: 1000px;
+@borderStyle: dotted;
+@divCenter:0 auto;
+
+/*调用变量*/
+@bgColor:#e15b5b;
+@textCenter:center;
+@Height:36px;
+@cursor:pointer;
+@rposition:relative;
+@aposition:absolute;
+@liBg:#f1fcfe;
+@liColor:#0085d0;
+.sfq_first,.sfq_second{
+    height: @Height;
+    line-height: @Height;
+    cursor: @cursor;
+    position: @rposition;
+}
+
+.sfq_first{
+    padding-left: 25px;
+}
+
+.sfq_second{
+    padding-left: 15px;
+}
+
+.sfq_icon{
+   position: @aposition;
+   top: 15px;
+   left: 10px;
+   width: 10px;
+   height: 6px;
+   background: url(../../../images/sfq_icon.png) no-repeat; 
+}
+
+.sfq_icon1{
+   position: @aposition;
+   top: 13px;
+   left: 10px;
+   width: 6px;
+   height: 10px;
+   background: url(../../../images/sfq_icon1.png) no-repeat; 
+}
+
+.spLeft{
+  left: 25px;
+}
+
+.sfq_first_ul li,.sfq_second_ul li{
+    cursor: @cursor;
+//  height: 36px;
+    line-height: 36px;
+//  padding-left:35px;
+//  position: @rposition;
+}
+
+.sfq_second_ul li{
+    padding-left:55px;
+}
+
+.sfq_first_ul .liClick{
+    background:@liBg;
+    color:@liColor;
+}
+.liClick{
+    background:@liBg;
+    color:@liColor;
+}
+
+.paddingLeft25{
+    padding-left: 25px;
+} 

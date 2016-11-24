@@ -8,7 +8,7 @@ var gulp = require('gulp'), //本地安装gulp所用到的地方
 
 //定义一个testless任务
 gulp.task('testless', function() {
-    gulp.src('style/css/page/less/*.less')
+    gulp.src('style/css/**/*.less')
         .pipe(less())
         .pipe(gulp.dest('style/css/page'))
         .pipe(livereload());
@@ -109,7 +109,7 @@ gulp.task('watch2',function(){
 
 gulp.task('watch3', function() {
     livereload.listen();
-    gulp.watch('style/css/page/less/*.less', ['testless']);
+    gulp.watch('style/css/**/*.less', ['testless']);
 });
 
  

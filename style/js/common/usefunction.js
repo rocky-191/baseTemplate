@@ -517,4 +517,87 @@ function GetCurrentStyle (obj, prop) {
         return document.defaultView.getComputedStyle (obj,null)[prop];     
     }      
     return null;   
-} 
+}
+
+//滚动时动态加载内容
+var loading = false;
+$(window).scroll(function(){
+ if((($(window).scrollTop()+$(window).height())+250)>=$(document).height()){
+      if(loading == false){
+           loading = true;
+           $('#loadingbar').css("display","block");
+           $.get("load.php?start="+$('#loaded_max').val(), function(loaded){
+                $('body').append(loaded);
+                $('#loaded_max').val(parseInt($('#loaded_max').val())+50);
+                $('#loadingbar').css("display","none");
+                loading = false;
+           });
+      }
+ }
+});
+
+$(document).ready(function() {
+ $('#loaded_max').val(50);
+});
+
+//使用jquery重绘图片大小
+$(window).bind("load", function() {
+     // IMAGE RESIZE
+     $('#product_cat_list img').each(function() {
+          var maxWidth = 120;
+          var maxHeight = 120;
+          var ratio = 0;
+          var width = $(this).width();
+          var height = $(this).height();
+
+          if(width > maxWidth){
+           ratio = maxWidth / width;
+           $(this).css("width", maxWidth);
+           $(this).css("height", height * ratio);
+           height = height * ratio;
+          }
+          var width = $(this).width();
+          var height = $(this).height();
+          if(height > maxHeight){
+           ratio = maxHeight / height;
+           $(this).css("height", maxHeight);
+           $(this).css("width", width * ratio);
+           width = width * ratio;
+          }
+     });
+     //$("#contentpage img").show();
+     // IMAGE RESIZE
+});
+
+//根据视窗(viewport)创建一个全屏宽度和高度(width/height)的div
+$('#content').css({
+    'width': $(window).width(),
+    'height': $(window).height(),
+});
+// make sure div stays full width/height on resize
+$(window).resize(function(){
+    var $w = $(window);
+    $('#content').css({
+      'width': $w.width(),
+      'height': $w.height(),
+    });
+});
+
+//克隆table head到表格下面
+var $tfoot = $('<tfoot></tfoot>'); 
+$($('thead').clone(true, true).children().get().reverse()).each(function(){
+    $tfoot.append($(this));
+});
+$tfoot.insertAfter('table thead');
+
+//采用data方法来缓冲数据
+var cache = {};
+ $.data(cache,'key','value'); //缓存数据
+  //获取数据
+ $.data(cache,'key');
+ 
+//部分页面加载更新
+setInterval(function() {   //每隔5秒钟刷新页面内容
+      //获取的内容将增加到 id为content的元素后
+     $("#content").load(url);
+ }, 5000);

@@ -601,3 +601,106 @@ setInterval(function() {   //每隔5秒钟刷新页面内容
       //获取的内容将增加到 id为content的元素后
      $("#content").load(url);
  }, 5000);
+ 
+//字符串相关方法
+//xString.substring(start,end)
+var str = 'www.jeffjade.com'
+console.log(str.substring(0,3)) // www
+console.log(str.substring(0))   //www.jeffjade.com
+console.log(str.substring(-2))  //www.jeffjade.com (传负值则视为0)
+
+//slice(),	stringObject.slice(start, end)
+var str = 'www.jeffjade.com'
+console.log(str.slice(0, 3))    // www
+console.log(str.slice(-3, -1))  // co
+console.log(str.slice(1, -1))   // www.jeffjade.co
+console.log(str.slice(2, 1))    // '' (返回空字符串,start须小于end)
+console.log(str.slice(-3, 0))   // '' (返回空字符串,start须小于end)
+
+//stringObject.substr(start,length)
+var str = 'www.jeffjade.com'
+console.log(webStr.substr(1, 3))   // ww.
+console.log(webStr.substr(0))      // www.jeffjade.com
+console.log(webStr.substr(-3, 3))  // com
+console.log(webStr.substr(-1, 5))  // m  (目标长度较大的话，以实际截取的长度为准)
+
+//str.split([separator][, limit])
+var str = 'www.jeffjade.com'
+str.split('.')      // ["www", "jeffjade", "com"]
+str.split('.', 1)   // ["www"]
+str.split('.').join('') // wwwjeffjadecom
+
+//查找类方法
+//stringObject.indexOf(searchValue,fromIndex)
+var str = 'www.jeffjade.com'
+console.log(str.indexOf('.'))     // 3
+console.log(str.indexOf('.', 1))  // 3
+console.log(str.indexOf('.', 5))  // 12
+console.log(str.indexOf('.', 12)) // -1
+
+//indexOf()也可以用来判断是否存在制定字符串
+if (str.indexOf('yoursPecifiedStr') !== -1) {
+    // do something
+}
+
+//ES6中有includes()方法，str.includes(searchString[, position])
+'Blue Whale'.includes('blue'); // returns false
+'乔峰乔布斯乔帮主'.includes('乔布斯'); // returns true
+if (str.includes('yoursPecifiedStr')) {
+    // do something(这样写是不是更为人性化？Yeah，这是一个更趋向人性化的时代嘛)
+}
+
+//lastIndexOf(),stringObject.lastIndexOf(searchValue,fromIndex)
+var str = 'www.jeffjade.com'
+console.log(str.lastIndexOf('.'))     // 12
+console.log(str.lastIndexOf('.', 1))  // -1
+console.log(str.lastIndexOf('.', 5))  // 3
+console.log(str.lastIndexOf('.', 12)) // 12
+
+//search()
+var str = 'www.jeffjade.com'
+console.log(str.search('w'))    // 0
+console.log(str.search(/j/g))   // 4
+console.log(str.search(/\./g))  // 3
+
+//match()方法
+var str = '#1a2b3c4d5e#';
+console.log(str.match('A'));    //返回null
+console.log(str.match('b'));    //返回["b", index: 4, input: "#1a2b3c4d5e#"]
+console.log(str.match(/b/));    //返回["b", index: 4, input: "#1a2b3c4d5e#"]
+
+//字符串反转
+String.prototype.reverse = function () {
+	return this.split('').reverse().join('')
+}
+
+//去除空白行
+String.prototype.removeBlankLines = function () {
+	return this.replace(/(\n[\s\t]*\r*\n)/g, '\n').replace(/^[\n\r\n\t]*|[\n\r\n\t]*$/g, '')
+}
+
+//转化为一维数组
+var Str = '陈寅恪,鲁迅,钱钟书,胡适,王国维,梁启超,吴宓,季羡林'
+var hallAllOfFameArr = Str.split(',')
+console.log(hallAllOfFameArr)
+// ["陈寅恪", "鲁迅", "钱钟书", "胡适", "王国维", "梁启超", "吴宓", "季羡林"]
+
+//转化为二维数组
+String.prototype.removeBlankLines = function () {
+	return this.replace(/(\n[\s\t]*\r*\n)/g, '\n').replace(/^[\n\r\n\t]*|[\n\r\n\t]*$/g, '')
+}
+String.prototype.strTo2dArr = function(firstSplit, secondSplit){
+	var contentStr = this.removeBlankLines(),
+		contentStrArr = contentStr.split(firstSplit),
+		resultArr = contentStrArr.map((element) => {
+            return element.split(secondSplit)
+        })
+	return resultArr;
+}
+var str ='
+渺渺钟声出远方,依依林影万鸦藏。
+一生负气成今日,四海无人对夕阳。
+破碎山河迎胜利,残馀岁月送凄凉。
+松门松菊何年梦,且认他乡作故乡。
+';
+console.log(str.strTo2dArr('\n', ','));

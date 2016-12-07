@@ -697,10 +697,104 @@ String.prototype.strTo2dArr = function(firstSplit, secondSplit){
         })
 	return resultArr;
 }
-var str ='
-渺渺钟声出远方,依依林影万鸦藏。
-一生负气成今日,四海无人对夕阳。
-破碎山河迎胜利,残馀岁月送凄凉。
-松门松菊何年梦,且认他乡作故乡。
-';
+var str ='渺渺钟声出远方,依依林影万鸦藏。一生负气成今日,四海无人对夕阳。破碎山河迎胜利,残馀岁月送凄凉。松门松菊何年梦,且认他乡作故乡。';
 console.log(str.strTo2dArr('\n', ','));
+
+
+/*
+ * 获取元素移动的方向
+ * @param  $element  元素的jQuery对象
+ * @param  event     事件对象
+ * @return direction 返回一个数字：0:上，1:右，2:下，3:左
+ **/
+function getDirection($element, event) {
+    var w = $element.width(),
+        h = $element.height(),
+        x = (event.pageX - $element.offset().left - (w / 2)) * (w > h ? (h / w) : 1),
+        y = (event.pageY - $element.offset().top - (h / 2)) * (h > w ? (w / h) : 1),
+        direction = Math.round((((Math.atan2(y, x) * (180 / Math.PI)) + 180) / 90) + 3) % 4;
+
+    return direction;
+}
+
+//使用方法
+/*$('#content').on('mouseenter', function(event){
+    console.log( 'enter: '+ getDirection($(this), event) );
+}).on('mouseleave', function(event){
+    console.log( 'leave: '+getDirection($(this), event) );
+})*/
+
+//html字段转换函数
+function escapeHTML(text) {  
+    var replacements= {"<": "&lt;", ">": "&gt;","&": "&amp;", "\"": "&quot;"};                      
+    return text.replace(/[<>&"]/g, function(character) {  
+        return replacements[character];  
+    }); 
+}
+
+//检测浏览器是否支持fixed
+function isSupportFixed() {
+    var userAgent = window.navigator.userAgent, 
+        ios = userAgent.match(/(iPad|iPhone|iPod)\s+OS\s([\d_\.]+)/),
+        ios5below = ios && ios[2] && (parseInt(ios[2].replace(/_/g, '.'), 10) < 5),
+        operaMini = /Opera Mini/i.test(userAgent),
+        body = document.body,
+        div, isFixed;
+
+    div = document.createElement('div');
+    div.style.cssText = 'display:none;position:fixed;z-index:100;';
+    body.appendChild(div);
+    isFixed = window.getComputedStyle(div).position != 'fixed';
+    body.removeChild(div);
+    div = null;
+
+    return !!(isFixed || ios5below || operaMini);
+}
+
+//解析url中的参数
+function getUrlInfo(name){
+	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+	var r = window.location.search.substr(1).match(reg);
+	if (r != null){
+		return unescape(r[2]); 		
+	}
+	return null;
+}
+
+//产生随机字符串
+function getRadomString(){
+	var randomString=Math.random().toString(36).substr(2);
+	return randomString;
+}
+
+function fixedRequestAnimationFrame(){
+	var lastTime = 0;
+    var vendors = ['ms', 'moz', 'webkit', 'o'];
+    for (var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+        window.requestAnimationFrame = window[vendors[x] + 'RequestAnimationFrame'];
+        window.cancelAnimationFrame = window[vendors[x] + 'CancelAnimationFrame'] || window[vendors[x] + 'CancelRequestAnimationFrame'];
+    }
+    if (!window.requestAnimationFrame) window.requestAnimationFrame = function(callback, element) {
+        var currTime = new Date().getTime();
+        var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+        var id = window.setTimeout(function() {
+            callback(currTime + timeToCall);
+        }, timeToCall);
+        lastTime = currTime + timeToCall;
+        return id;
+    };
+    if (!window.cancelAnimationFrame) window.cancelAnimationFrame = function(id) {
+        clearTimeout(id);
+    };
+}
+
+//产生6位随机数字
+function getRanNum(){
+    return (''+Math.random()).slice(-6); // Math.random().toString().slice(-6)
+}
+
+//字符串反转
+function getStringReverse(str){
+	var revs = str.split("").reverse().join("");
+	return revs;
+}

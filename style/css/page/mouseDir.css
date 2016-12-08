@@ -1,0 +1,33 @@
+/*声明变量*/
+/*调用变量*/
+.box {
+  width: 260px;
+  height: 200px;
+  margin: 10px auto;
+  border: 1px solid #ccc;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  color: #333;
+  text-align: center;
+  cursor: pointer;
+}
+.content {
+  position: absolute;
+  z-index: 2;
+  background-color: lightcoral;
+  width: 100%;
+  height: 100%;
+  left: -100%;
+  top: -100%;
+  line-height: 198px;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+}
+.content.trans {
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}

@@ -1,6 +1,7 @@
 //导入工具包 require('node_modules里对应模块')
 var gulp = require('gulp'), //本地安装gulp所用到的地方
     less = require('gulp-less'),
+    rename=require('gulp-rename'),//重命名
     uglify = require('gulp-uglify'),//压缩js
     autoprefixer = require('gulp-autoprefixer'),//自动添加前缀
     cssmin = require('gulp-clean-css'),//压缩css
@@ -8,7 +9,7 @@ var gulp = require('gulp'), //本地安装gulp所用到的地方
 
 //定义一个testless任务
 gulp.task('testless', function() {
-    gulp.src('style/css/**/*.less')
+    gulp.src('style/css/less/*.less')
         .pipe(less())
         .pipe(gulp.dest('style/css/page'))
         .pipe(livereload());
@@ -18,7 +19,8 @@ gulp.task('testless', function() {
 gulp.task('jsmin', function () {
     gulp.src('style/js/page/*.js')//指定压缩文件
         .pipe(uglify())//压缩选项配置
-        .pipe(gulp.dest('style/js/distJS'));//制定压缩后的文件位置
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest('style/js/buildJs'));//制定压缩后的文件位置
 });
 
 //定义压缩css文件任务
@@ -31,7 +33,8 @@ gulp.task('cssmin', function () {
             keepSpecialComments: '*'
             //保留所有特殊前缀 当你用autoprefixer生成的浏览器前缀，如果不加这个参数，有可能将会删除你的部分前缀
         }))
-        .pipe(gulp.dest('style/css/distCss'));
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest('style/css/buildCss'));
 });
 
 var browserOptions = {

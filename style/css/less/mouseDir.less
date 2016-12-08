@@ -1,0 +1,49 @@
+/*声明变量*/
+
+@mainColor: #000;
+@siteWidth:260px;
+@borderStyle: dotted;
+@divCenter:0 auto;
+@border:1px solid #ccc;
+@posA:absolute;
+@posR:relative;
+@100:100%;
+@displayI:inline-block;
+@color3:#333;
+@colorf:#fff;
+@textCenter:center;
+@mouseCurser:pointer;
+/*调用变量*/
+.box {
+    width:@siteWidth;
+    height: 200px;
+    margin: 10px auto;
+    border:@border;
+    position:@posR;
+    overflow: hidden;
+    display:@displayI;
+    color:@color3;
+    text-align: @textCenter;
+    cursor: @mouseCurser;
+}
+
+.content {
+    position:@posA;
+    z-index: 2;
+    background-color: lightcoral;
+    width:@100;
+    height:@100;
+    left: -100%;
+    top: -100%;
+    line-height: 198px;
+    text-align:@textCenter;
+    color:@colorf;
+    font-size: 20px;
+}
+
+.content.trans {
+    -webkit-transition:all .2s;
+    transition: all .2s;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+}

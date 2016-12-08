@@ -4,4 +4,7 @@
 
 在首页index.html中可进行导航  
 
-http://htmlpreview.github.io/?https://github.com/rocky-191/baseTemplate/blob/master/index.html 
+http://htmlpreview.github.io/?https://github.com/rocky-191/baseTemplate/blob/master/index.html  
+
+version 1.0.1  
+新增了鼠标移入移出方向的判断 

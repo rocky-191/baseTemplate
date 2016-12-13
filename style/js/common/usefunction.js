@@ -798,3 +798,45 @@ function getStringReverse(str){
 	var revs = str.split("").reverse().join("");
 	return revs;
 }
+
+//绑定事件
+function addEvent(obj,type,fn){
+  if(obj.addEventListener){
+  obj.addEventListener(type,fn);
+  }else{
+  obj.attachEvent('on'+type,fn);
+  }
+};
+//取消绑定
+function removeEvent(obj,type,fn){
+  if(obj.removeEventListener){
+  obj.removeEventListener(type,fn);
+  }else{
+  obj.detachEvent('on'+type,fn);
+  }
+}
+
+//去除字符串两侧空白
+String.prototype.mytrim=function(){
+  return this.replace(/^\s+|\s+$/g,'');
+};
+
+//滚动事件封装兼容方案
+function myScroll(obj,upFn,downFn){
+  obj.onmousewheel=fn;
+  obj.addEventListener('DOMMouseScroll',fn);
+
+  function fn(ev){
+  if(ev.wheelDelta>0 || ev.detail<0){
+  //这个条件成立，说明现在都是往上边滚动
+  //upFn();
+  upFn.call(obj,ev);
+  }else{
+  //走这里说明，都是往下滚动
+  //downFn();
+  downFn.call(obj,ev);
+  }
+  ev.preventDefault();
+  return false;
+  };
+}

@@ -840,3 +840,7 @@ function myScroll(obj,upFn,downFn){
   return false;
   };
 }
+
+//获取随机颜色值
+//var color = '#' + Math.random().toString(16).slice(2, 8);
+//alert(color);

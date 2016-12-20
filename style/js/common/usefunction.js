@@ -844,3 +844,14 @@ function myScroll(obj,upFn,downFn){
 //获取随机颜色值
 //var color = '#' + Math.random().toString(16).slice(2, 8);
 //alert(color);
+
+//获取随机颜色方法
+function getColor(){
+	var color = "#";
+	var randowColor = ["0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f","g"];
+	var len=6;
+	for(var i=0;i<len;i++){
+		color +=randowColor[parseInt(Math.random()*randowColor.length)];//取到randowColor数组中的某一个索引值
+	}
+	return color;
+}

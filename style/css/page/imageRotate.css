@@ -1,0 +1,120 @@
+.imageBlock{
+	padding-top: 120px;
+	width: 800px;
+	height: 730px;
+	overflow: hidden;
+	margin: 0 auto;
+}
+.flip-container {perspective: 1000;
+    -webkit-perspective: 1000px;    /*父类容器中  perspective  子类允许透视*/
+    -moz-perspective: 1000px;
+    -ms-perspective: 1000px;
+    -o-perspective: 1000px;
+    perspective: 1000px;
+    margin:0px auto; 
+    float:left; 
+    margin-left:20px; 
+    margin-bottom:20px;
+}
+ 
+
+.flip-container, .front, .back {width: 600px;height:600px;}
+
+.front, .back {
+    backface-visibility: hidden; 
+    overflow:hidden;
+    -webkit-transition: .8s ease-out;
+    transition: .8s ease-out;
+  -webkit-transform-style: preserve-3d;  /* 子类保留3d动画结果*/
+   -moz-transform-style: preserve-3d; 
+   -ms-transform-style: preserve-3d;
+   -o-transform-style: preserve-3d;
+   transform-style: preserve-3d;
+   position: absolute;
+   top: 0;
+   left: 0; /*动画元素最好绝对位置*/
+}
+
+.front img, .back  img{ width:600px; height:600px; }
+
+.front {z-index: 2; /*起始设置层  hover时候改变*/
+-webkit-transform: rotateY(0deg);
+-moz-transform: rotateY(0deg);
+-ms-transform:  rotateY(0deg);
+-o-transform:  rotateY(0deg);
+transform: rotateY(0deg);
+}
+
+.back { z-index:1;/*起始设置层  hover时候改变*/
+-webkit-transform: rotateY(-180deg);
+-moz-transform: rotateY(-180deg);
+-ms-transform:  rotateY(-180deg);
+-o-transform:  rotateY(-180deg);
+transform: rotateY(-180deg);
+}
+
+
+
+.flipper {
+      -webkit-transition: transform .8s ease-in-out;
+      -moz-transition: transform .8s ease-in-out;
+      -ms-transition: transform .5s ease-in-out;
+      -o-transition: transform .5s ease-in-out; 
+      transition: transform .5s ease-in-out;
+
+      -webkit-transform-style: preserve-3d;  /*使其子类变换后得以保留 3d转换后的位置*/
+      -moz-transform-style: preserve-3d;
+      -ms-transform-style: preserve-3d;
+      -o-transform-style: preserve-3d;
+      transform-style: preserve-3d; 
+      display:block;position: relative;
+     }
+      
+   
+.flip-container:hover .back {
+     -webkit-transform: rotateY(0deg);
+     -moz-transform:  rotateY(0deg);
+     -ms-transform:  rotateY(0deg);
+     -o-transform:  rotateY(0deg);
+     transform: rotateY(0deg);
+      z-index:2; 
+    }
+      
+.flip-container:hover .front { 
+      -webkit-transform: rotateY(180deg);
+      -moz-transform: rotateY(180deg);
+      -ms-transform:  rotateY(180deg);
+      -o-transform:  rotateY(180deg); 
+      transform: rotateY(180deg);
+      z-index:10;
+      }
+      
+
+/**
+ * 2016-12-23 开关样式***/
+.turnDiv{
+	width: 405px;
+	height: 30px;
+	padding: 5px;
+	background: #0072FF;
+	border-radius: 3px;
+	position: relative;
+}
+
+.turnDiv span{
+	display: inline-block;
+	width: 200px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 18px;
+	font-weight: bold;
+	color: #fff;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+.turnDiv span.on{
+	background: #fff;
+	color: #0072FF;
+}

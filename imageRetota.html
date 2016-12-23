@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>css3 翻牌和开关</title>
+	<meta http-equiv="X-UA-Compatible" content=”IE=Edge,chrome=1″ />
+	<meta name="renderer" content="webkit">
+	<link rel="stylesheet" href="style/css/base/MyReset.css" />
+	<link rel="stylesheet" href="style/css/common/main.css" />
+	<link rel="stylesheet" href="style/css/page/imageRotate.css" />
+</head>
+<body>
+	<div class="Ct">
+		<div class="imageBlock">
+	 		<ul class="imageUl">
+			    <li class="flip-container">
+			      <a class="flipper">
+			      	<div class="front">
+			      		<img src="style/images/img3.jpeg">
+			      	</div>
+			      	<div class="back" >
+			      		<img src="style/images/img4.jpeg">
+			      	</div>
+			      </a>
+			   </li>
+		  	</ul>
+		  	<div class="ClearFloat"></div>
+		</div>
+	  	<div>
+	  		<label class="fontSize14 color_3">开关样式</label>
+	  	</div>
+	  	<div class="marginTop">
+	  		<div class="turnDiv js-turnDiv">
+	  			<span id="on">on</span>
+	  			<span class="on" id="off">off</span>
+	  		</div>
+	  	</div>
+	</div>
+	<script>
+		var onObj=document.getElementById("on"),
+			offObj=document.getElementById("off");
+		onObj.onclick=function(){
+			onObj.className=(onObj.className=="on"?"":"on");
+			offObj.className=(offObj.className==""?"on":"");
+		}
+		offObj.onclick=function(){
+			offObj.className=(offObj.className=="on"?"":"on");
+			onObj.className=(onObj.className==""?"on":"");
+		}
+	</script>
+</body>
+</html>

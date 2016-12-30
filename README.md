@@ -7,4 +7,4 @@
 https://rocky-191.github.io/baseTemplate  
 
 version 1.0.1  
-新增了鼠标移入移出方向的判断 
+新增了鼠标移入移出方向的判断，新增了圆环周围均匀分布圆点的实例

@@ -855,3 +855,24 @@ function getColor(){
 	}
 	return color;
 }
+
+//数字千分符方法
+//法一，利用正则表达式
+//var a = 123213213213;
+//str = a.toString().replace(/\B(?=(.{3})+$)/g,",")
+//alert(str);
+
+//法二
+/*var number = 34234123534;
+//变为字符串
+var str = number.toString();
+//把开头剩余的小部分先放进去，本例中先放入34
+var result = [str.substr(0,str.length % 3)];
+
+//正着来，三个字母三个字母取
+for(var i = 0 ; i < parseInt(str.length / 3) ; i++){
+	//开始截取的位置依次成为2、5、8
+	var s = str.substr(str.length % 3 + 3 * i, 3);
+	result.push(s);
+}
+alert( result.join(",") );*/

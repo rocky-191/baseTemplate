@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<title>按钮点击效果实例</title>
+		<meta http-equiv="keywords" content="">
+	    <meta http-equiv="description" content="">
+	    <!--<meta http-equiv="X-UA-Compatible" content=“IE=EmulateIE8″>-->
+	    <meta http-equiv="X-UA-Compatible" content=”IE=Edge,chrome=1″ />
+	    <meta name="renderer" content="webkit">
+	    <link rel="stylesheet" href="style/css/base/MyReset.css" />
+	    <link rel="stylesheet" href="style/css/page/buttonCss.css" />
+	</head>
+	<body>
+		<div class="container">
+		    <div class="row cf">
+			    <div class="three col">
+			        <div class="hamburger" id="hamburger-1">
+			          <span class="line"></span>
+			          <span class="line"></span>
+			          <span class="line"></span>
+			        </div>
+			    </div>
+		      	<div class="three col">
+			        <div class="hamburger" id="hamburger-2">
+			          <span class="line"></span>
+			          <span class="line"></span>
+			          <span class="line"></span>
+			        </div>
+		      	</div>
+		      	<div class="three col">
+			        <div class="hamburger" id="hamburger-3">
+			          <span class="line"></span>
+			          <span class="line"></span>
+			          <span class="line"></span>
+			        </div>
+		      	</div>
+		      	<div class="three col">
+			        <div class="hamburger" id="hamburger-4">
+			          <span class="line"></span>
+			          <span class="line"></span>
+			          <span class="line"></span>
+			        </div>
+		      	</div>
+		    </div>
+		    <div class="row cf">
+			    <div class="three col">
+			        <div class="hamburger" id="hamburger-5">
+			          <span class="line"></span>
+			          <span class="line"></span>
+			          <span class="line"></span>
+			        </div>
+			    </div>
+		      	<div class="three col">
+			        <div class="hamburger" id="hamburger-6">
+			          <span class="line"></span>
+			          <span class="line"></span>
+			          <span class="line"></span>
+			        </div>
+		      	</div>
+		      	<div class="three col">
+			        <div class="hamburger" id="hamburger-7">
+			          <span class="line"></span>
+			          <span class="line"></span>
+			          <span class="line"></span>
+			        </div>
+		      	</div>
+		      	<div class="three col">
+			        <div class="hamburger" id="hamburger-8">
+			          <span class="line"></span>
+			          <span class="line"></span>
+			          <span class="line"></span>
+			        </div>
+		      	</div>
+		    </div>
+		    <div class="row cf">
+		      	<div class="three col">
+			        <div class="hamburger" id="hamburger-9">
+			          <span class="line"></span>
+			          <span class="line"></span>
+			          <span class="line"></span>
+			        </div>
+		      	</div>
+		      	<div class="three col">
+			        <div class="hamburger" id="hamburger-10">
+			          <span class="line"></span>
+			          <span class="line"></span>
+			          <span class="line"></span>
+			        </div>
+		      	</div>
+		      	<div class="three col">
+			        <div class="hamburger" id="hamburger-11">
+			          <span class="line"></span>
+			          <span class="line"></span>
+			          <span class="line"></span>
+			        </div>
+		      	</div>
+		      	<div class="three col">
+			        <div class="hamburger" id="hamburger-12">
+			          <span class="line"></span>
+			          <span class="line"></span>
+			          <span class="line"></span>
+			        </div>
+		      	</div>
+		    </div>
+		</div>
+		<script>
+//			$(document).ready(function(){
+//			  $(".hamburger").click(function(){
+//			    $(this).toggleClass("is-active");
+//			  });
+//			});
+			window.onload=function(){
+				var obj=document.querySelectorAll(".hamburger");
+				for(var i=0,len=obj.length;i<len;i++){
+					obj[i].onclick=function(){
+						if(this.className=="hamburger"){
+							this.classList.add("is-active");
+						}else{
+							this.classList.remove("is-active");
+						}
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -235,6 +235,15 @@ function addClass(obj,className){
 	arr.push(className);
 	obj.className=arr.join(" ");
 }
+
+/**方法二增加类名**/
+function addClass(elem, className) {
+  if(elem.classList) {
+    elem.classList.add(className);
+  } eles {
+    elem.className += ' ' + className;
+  }
+}
 /*
 说明：数组的indexOf()方法，找到数组中的元素，并返回该元素在数组中的位置；
 @arr---->传入的数组
@@ -262,6 +271,24 @@ function removeClass (obj,className){
 		arr1.splice(_index,1);
 		obj.className=arr1.join(" ");
 	}
+}
+
+/**方法二删除类名***/
+function removeClass(elem, className) {
+  if(elem.classList) {
+    elem.classList.remove(className);
+  } else {
+    elem.className = elem.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+  }
+}
+
+/**检测类名包含**/
+function hasClass(elem, className) {
+  if(elem.classList) {
+    return elem.classList.contains(className);
+  } else {
+    return new RegExp('(^| )' + className + '( |$)', 'gi').test(elem.className);
+  }
 }
 /*
 说明：事件绑定的第二种方式，可以让一个元素的一个事件同时触发2个事件函数
@@ -931,3 +958,66 @@ function copyOwnPropertiesFrom(target, source) {
   });
   return target;
 }
+
+/**在指定节点后插入新的子节点**/
+//jquery方法$('<span>').insertAfter('#test')
+function insertAfter(elem, newNode){
+  if(elem.nextElementSibling) {
+    elem.parentNode.insertBefore(newNode, elem.nextElementSibling);
+  } else {
+    elem.parentNode.appendChild(newNode);
+  }
+}
+//调用方式
+/*
+var t = document.getElementById('test');
+var span = document.createElement('span');   
+insertAfter(t, span);
+*/
+
+/**获取子节点方法**/
+//jquery方式$("#test").children()
+function children(elem) {
+  if(elem.children) {
+    return elem.children;
+  } else {
+    var children = [];     
+    for (var i = el.children.length; i--;) {       
+        if (el.children[i].nodeType != 8)      
+          children.unshift(el.children[i]);    
+    }
+    return children;
+  }
+}
+//调用方式
+//children(document.getElementById('test'));
+
+/**获取下一个兄弟节点**/
+//jquery方式$("#test").next()
+function nextElementSibling(elem) {
+  if(elem.nextElementSibling) {
+    return elem.nextElementSibling;
+  } else {
+    do { 
+       elem = elem.nextSibling; 
+    } while ( elem && elem.nodeType !== 1 );   
+    return elem;
+  }
+}
+//使用方式
+//nextElementSibling(document.getElementById('test'));
+
+/**获取上一个兄弟节点**/
+//jquery方式$("#test").prev()
+function previousElementSibling(elem) {    
+  if(elem.previousElementSibling) {    
+    return elem.previousElementSibling;    
+  } else {    
+    do {     
+      elem = elem.previousSibling;     
+    } while ( elem && elem.nodeType !== 1 );       
+    return elem;    
+  }   
+}     
+//使用方式
+//previousElementSibling(document.getElementById('test')); 

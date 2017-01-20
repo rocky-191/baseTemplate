@@ -1020,4 +1020,16 @@ function previousElementSibling(elem) {
   }   
 }     
 //使用方式
-//previousElementSibling(document.getElementById('test')); 
+//previousElementSibling(document.getElementById('test'));
+
+/**防抖动函数**/
+function throttle(fn, wait) {
+  var time = Date.now();
+  return function() {
+    if ((time + wait - Date.now()) < 0) {
+      fn();
+      time = Date.now();
+    }
+  }
+}
+//调用方式window.addEventListener('scroll', throttle(callback, 1000));

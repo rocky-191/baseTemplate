@@ -1071,3 +1071,11 @@ function offset(curEle) {
 		top: totalTop
 	};
 }
+
+//获取URL中字符串数据
+function GetQueryString(name){
+    var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);
+    if(r!=null)return  unescape(r[2]); return null;
+}
+//调用方式比如获取查询字符串中的id，var id = GetQueryString(id);

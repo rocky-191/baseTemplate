@@ -202,3 +202,16 @@ function siblings(elm) {
 	}
 	return a;
 }
+
+//获取元素到页面到各个边的距离
+function getDistance(obj) {  
+	 if (!obj instanceof jQuery) {  
+	     obj = $(obj);  
+	 }  
+	 var distance = {};  
+	 distance.top = (obj.offset().top - $(document).scrollTop());  
+	 distance.bottom = ($(window).height() - distance.top - obj.outerHeight());  
+	 distance.left = (obj.offset().left - $(document).scrollLeft());  
+	 distance.right = ($(window).width() - distance.left - obj.outerWidth());  
+	 return distance;  
+}

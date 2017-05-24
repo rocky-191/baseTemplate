@@ -40,3 +40,30 @@
 	margin-left: 220px;
 	background: #ccc;
 }
+
+/**任意列数均匀布局**/
+.container{
+	width:400px;
+	margin:50px auto 0;
+}
+
+.justify{
+  text-align: justify;
+}
+
+.justify i{
+  width:24px;
+  line-height:24px;
+  display:inline-block;
+  text-align:center;
+  border-radius:50%;
+  background: black;
+  color: #fff;
+}
+
+.justify:after {
+  content: "";
+  display: inline-block;
+  position: relative;
+  width: 100%;
+}

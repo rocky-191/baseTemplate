@@ -1079,3 +1079,20 @@ function GetQueryString(name){
     if(r!=null)return  unescape(r[2]); return null;
 }
 //调用方式比如获取查询字符串中的id，var id = GetQueryString(id);
+
+//针对ie8等低版本浏览器document.getElementsByName方法不生效解决方法 
+function getByName(Name){
+　　var i = document.getElementsByName(Name);
+　　if(i>0){
+　　　　return i;
+　　}else{
+　　　　var aele = document.getElementsByTagName('*');
+　　　　var arr = [];
+　　　　for (var i = 0;i<aele.length;i++){
+　　　　　　if(aele[i].getAttribute("name")==Name){
+　　　　　　　　arr.push(aele[i]);
+　　　　　　}
+　　　　}
+　　　　return arr;
+　　}
+}

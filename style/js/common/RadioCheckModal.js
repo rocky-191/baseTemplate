@@ -1,5 +1,5 @@
 
-function Radio_check(event,RadioBoxName){
+/*function Radio_check(event,RadioBoxName){
 	if(event.target){		
 		if($(event.target).prop("checked")){
 			$(event.target).attr("checked","checked");
@@ -26,4 +26,16 @@ function Radio_check(event,RadioBoxName){
 		}
 	}
 	
+}*/
+function Radio_check(event,RadioBoxName){
+	var e=event.target?event.target:event.srcElement;		
+	if($(e).prop("checked")){
+		$(e).attr("checked","checked");
+		var chk =window.document.getElementsByName(RadioBoxName);
+		for (var i = 0; i < chk.length; i++) {
+	  		$(chk[i].parentElement).removeClass("on_check");
+	  		$(chk[i])[0].removeAttribute("checked");
+	 		}			
+		$(e).parent().addClass("on_check");						
+	}	
 }

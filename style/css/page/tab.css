@@ -2,9 +2,60 @@
 
 .box{ width:400px; margin:0 auto;}
 .box ul{ height:40px;}
-.box ul li{ float:left; width:100px; color:#fff; text-align:center; line-height:40px;background:#00b6ea;}
+.box ul li{ float:left; width:100px; color:#fff; text-align:center; line-height:40px;background:#00b6ea;cursor: pointer;}
 .box ul li.now{ color:#F60; border-bottom:solid 2px #FF6600;}
 
 .list,.list1{ margin-top:20px}
 .list div,.list1 div{ color:#666;width: 200px;text-align: center;}
 .list div.text,.list1 div.text{  display:none;}
+
+.newbox,.boxtwo{
+	width:600px;
+	margin:0 auto;
+}
+.newbox ul{
+	width:600px;
+	height: 60px;
+	background: #33344A;
+}
+.newbox ul li{
+	float: left;
+	transition: 0.3s;
+}
+.newbox ul li a{
+	display: block;
+	width: 100px;
+	height: 60px;
+	line-height: 60px;
+	/*border: 1px solid red;*/
+	text-decoration: none;
+	text-align: center;
+	color: #717181;
+	font-size: 15px;
+}
+.boxtwo {
+	clear: left;
+}
+.boxtwo ul{
+	width: 600px;
+	height: 300px;
+	background: white;
+}
+.boxtwo ul li{
+	position: absolute;
+	transition: 0.3s;
+	padding: 30px;
+	font-family: "微软雅黑";
+	font-size: 15px;
+	width: 600px;
+	height: 10px;
+}
+.show{
+	opacity: 3;
+}
+.hide{
+	opacity: 0;
+}
+.bj{
+	background: #e74c3c;
+}

@@ -784,3 +784,22 @@ img{
 }
 //这样的设置，比如在屏幕宽度大于等于750px设备上，1rem=100px；图片显示就是宽高都是100px
 //比如在iphone6(屏幕宽度：375)上，375/750*100=50px;就是1rem=50px;图片显示就是宽高都是50px;
+
+
+//随机生成指定长度的字符串
+function randomStr(n) {
+  let standard = 'abcdefghijklmnopqrstuvwxyz9876543210'
+  let len = standard.length
+  let result = ''
+
+  for (let i = 0; i < n; i++) {
+    result += standard.charAt(Math.floor(Math.random() * len))
+  }
+
+  return result
+}
+
+//产生随机颜色
+function getRandomColor() {
+    return `#${Math.random().toString(16).substr(2, 6)}`
+}

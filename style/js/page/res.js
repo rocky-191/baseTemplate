@@ -59,6 +59,22 @@ window.onload=function(){
 		{
 			"link":"http://www.cnblogs.com/chenyablog/p/5551143.html",
 			"linkName":"常用技术网站整理"
+		},
+		{
+			"link":"http://f2er.club/",
+			"linkName":"前端人的俱乐部"
+		},
+		{
+			"link":"https://github.com/nieweidong/fetool",
+			"linkName":"大前端工具集"
+		},
+		{
+			"link":"https://github.com/foru17/front-end-collect",
+			"linkName":"前端收集箱"
+		},
+		{
+			"link":"https://www.awesomes.cn/",
+			"linkName":"前端资源库"
 		}
 	];
 	

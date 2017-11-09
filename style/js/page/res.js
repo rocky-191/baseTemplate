@@ -23,6 +23,42 @@ window.onload=function(){
 		{
 			"link":"https://segmentfault.com/a/1190000003510001",
 			"linkName":"github资源收集"
+		},
+		{
+			"link":"http://www.daqianduan.com/nav",
+			"linkName":"大前端网址导航"
+		},
+		{
+			"link":"http://caibaojian.com/c/qianduan",
+			"linkName":"前端大神俱乐部"
+		},
+		{
+			"link":"http://123.jser.us/",
+			"linkName":"前端导航站"
+		},
+		{
+			"link":"http://caibaojian.com/links",
+			"linkName":"前端开发博客集合"
+		},
+		{
+			"link":"http://collect.w3ctrain.com/",
+			"linkName":"前端收藏夹"
+		},
+		{
+			"link":"http://jsdig.com/",
+			"linkName":"前端导航网"
+		},
+		{
+			"link":"https://123.w3cschool.cn/plk2fi",
+			"linkName":"前端学习资源汇总"
+		},
+		{
+			"link":"http://so.uigreat.com/",
+			"linkName":"UI设计师导航"
+		},
+		{
+			"link":"http://www.cnblogs.com/chenyablog/p/5551143.html",
+			"linkName":"常用技术网站整理"
 		}
 	];
 	

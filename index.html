@@ -25,110 +25,8 @@
 						</div>
 						<h1 class="main-title">基础组件库</h1>
 						<ul class="main-content-ul" id="componentsUl">
-							<li>
-								<a href="allCityThreeLevelLink.html" target="_blank">城市三级联动</a>
-							</li>
-							<li>
-								<a href="allCityLink.html" target="_blank">城市三级联动可输入选择实例</a>
-							</li>
-							<li>
-								<a href="autoCompleteDemo.html" target="_blank">输入框自动填充完成实例</a>
-							</li>
-							<li>
-								<a href="calenderDemo.html" target="_blank">日历实例</a>
-							</li>
-							<li>
-								<a href="checkboxAndRadio.html" target="_blank">复选框和单选钮实例</a>
-							</li>
-							<li>
-								<a href="css3Login.html" target="_blank">css3登录框实例</a>
-							</li>
-							<li>
-								<a href="cssLoading.html" target="_blank">css加载实例</a>
-							</li>
-							<li>
-								<a href="dropDownFixedNav.html" target="_blank">下拉固定导航实例</a>
-							</li>
-							<li>
-								<a href="ErWeiCode.html" target="_blank">生成二维码实例</a>
-							</li>
-							<li>
-								<a href="fengCaoTab.html" target="_blank">蜂巢tab切换实例</a>
-							</li>
-							<li>
-								<a href="fenLanSameHeight.html" target="_blank">分栏等高实例</a>
-							</li>
-							<li>
-								<a href="gunDongTiaoDemo.html" target="_blank">滚动条实例</a>
-							</li>
-							<li>
-								<a href="layoutDemo1.html" target="_blank">布局类型一</a>
-							</li>
-							<li>
-								<a href="layoutDemo2.html" target="_blank">布局类型二</a>
-							</li>
-							<li>
-								<a href="lunBoDemo.html" target="_blank">轮播实例</a>
-							</li>
-							<li>
-								<a href="progressDemo.html" target="_blank">进度条实例</a>
-							</li>
-							<li>
-								<a href="huaDongDaoHang.html" target="_blank">滑动导航切换实例</a>
-							</li>
-							<li>
-								<a href="selectTemplate.html" target="_blank">美化的下拉选择框实例</a>
-							</li>
-							<li>
-								<a href="shouFengQinDemo.html" target="_blank">手风琴实例</a>
-							</li>
-							<li>
-								<a href="starGrade.html" target="_blank">星星评分实例</a>
-							</li>
-							<li>
-								<a href="tabDemo.html" target="_blank">tab切换实例</a>
-							</li>
-							<li>
-								<a href="tableContentScrollUp.html" target="_blank">内容自动向上滚动实例</a>
-							</li>
-							<li>
-								<a href="tableTrMoveDemo.html" target="_blank">表格行内容上下移动实例</a>
-							</li>
-							<li>
-								<a href="tanChuangAndTable.html" target="_blank">弹窗实例及表格基础样式实例</a>
-							</li>
-							<li>
-								<a href="textAreaHeightAuto.html" target="_blank">textarea输入框高度自动变化实例</a>
-							</li>
-							<li>
-								<a href="toolTipDemo.html" target="_blank">内容tooltip实例</a>
-							</li>
-							<li>
-								<a href="triangleDemo.html" target="_blank">css三角形实例</a>
-							</li>
-							<li>
-								<a href="tableContentScrollUp1.html" target="_blank">表格表头固定，内容向上滚动实例</a>
-							</li>
-							<li>
-								<a href="3D_rotate.html" target="_blank">3D立方体旋转</a>
-							</li>
-							<li>
-								<a href="animationDemo.html" target="_blank">基础动画集合</a>
-							</li>
-							<li>
-								<a href="goTop.html" target="_blank">回到顶部实例</a>
-							</li>
-							<li>
-								<a href="mouseDirection.html" target="_blank">检测鼠标移入移出方向</a>
-							</li>
-							<li>
-								<a href="imageRetota.html" target="_blank">图片翻转和开关</a>
-							</li>
-							<li>
-								<a href="circlePos.html" target="_blank">圆环周围均匀分布圆点</a>
-							</li>
-							<li>
-								<a href="layoutDemo3.html" target="_blank">任意列数均匀布局</a>
+							<li v-for="(item,index) in items" :key="index">
+								<a :href="item.link" target="_blank" v-text="item.linkName"></a>
 							</li>
 						</ul>
 					</div>
@@ -136,6 +34,7 @@
 			</div>
 		</div>
 		<script type="text/javascript" src="style/js/common/indexJS/TweenLite.min.js" ></script>
+		<script type="text/javascript" src="style/js/base/vue2.0/vue.min.js" ></script>
 		<script type="text/javascript" src="style/js/common/indexJS/EasePack.min.js" ></script>
 		<script type="text/javascript" src="style/js/common/indexJS/rAF.js" ></script>
 		<script type="text/javascript" src="style/js/base/jquery-1.9.1.min.js" ></script>

@@ -247,3 +247,14 @@ body{
 .bgColor_f{
 	background: #fff;
 }
+
+.resUl li a{
+	height: 30px;
+	line-height: 30px;
+	color: #009a61;
+	font-size: 14px;
+}
+
+.resUl li a:hover{
+	text-decoration: underline;
+}

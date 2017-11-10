@@ -23,7 +23,7 @@
 					<table class="base_table">
 						<thead class="table_head">
 							<td width="5%">
-								<div class="base2_checked">
+								<div class="base2_checked js-checkAll">
 									<input type="checkbox" class="checkboxclass input checkbox_input" id="formwork_checkbox" onclick="formwork_checkbox_checkAll(event,'formwork_subBox')"/>
 								</div>
 							</td>
@@ -33,7 +33,7 @@
 							<tr>
 					            <td class="borderLeftNone">
 					                <div class="base2_checked">
-										<input type="checkbox" name="formwork_subBox" class="checkboxclass input checkbox_input" onclick="checkbox_check(event)"/>
+										<input type="checkbox" name="formwork_subBox" class="checkboxclass input checkbox_input" onclick="checkbox_check(event,'formwork_subBox')"/>
 									</div>
 					            </td>
 					            <td>
@@ -43,7 +43,17 @@
 					       <tr>
 					            <td class="borderLeftNone">
 					                <div class="base2_checked">
-										<input type="checkbox" name="formwork_subBox" class="checkboxclass input checkbox_input" onclick="checkbox_check(event)"/>
+										<input type="checkbox" name="formwork_subBox" class="checkboxclass input checkbox_input" onclick="checkbox_check(event,'formwork_subBox')"/>
+									</div>
+					            </td>
+					            <td>
+					                <label>2</label>
+					            </td>
+					       </tr>
+					       <tr>
+					            <td class="borderLeftNone">
+					                <div class="base2_checked">
+										<input type="checkbox" name="formwork_subBox" class="checkboxclass input checkbox_input" onclick="checkbox_check(event,'formwork_subBox')"/>
 									</div>
 					            </td>
 					            <td>

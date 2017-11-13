@@ -1080,6 +1080,45 @@ function GetQueryString(name){
 }
 //调用方式比如获取查询字符串中的id，var id = GetQueryString(id);
 
+//判断是否为邮箱
+function isEmail(str) {
+    return /\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/.test(str);
+}
+
+//判断是否是身份证号
+function isIdCard(str) {
+    return /^(^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$)|(^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])((\d{4})|\d{3}[Xx])$)$/.test(str)
+}
+
+//判断URL
+function isUrl(str) {
+    return /[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/i.test(str);
+}
+
+//判断两个数组是否相等
+function arrayEqual(arr1, arr2) {
+    if (arr1 === arr2) return true;
+    if (arr1.length != arr2.length) return false;
+    for (var i = 0; i < arr1.length; ++i) {
+        if (arr1[i] !== arr2[i]) return false;
+    }
+    return true;
+}
+
+//获取offset
+function offset(ele) {
+    var pos = {
+        left: 0,
+        top: 0
+    };
+    while (ele) {
+        pos.left += ele.offsetLeft;
+        pos.top += ele.offsetTop;
+        ele = ele.offsetParent;
+    };
+    return pos;
+}
+
 //针对ie8等低版本浏览器document.getElementsByName方法不生效解决方法 
 function getByName(Name){
 　　var i = document.getElementsByName(Name);

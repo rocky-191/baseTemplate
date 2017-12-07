@@ -29,3 +29,12 @@ function ajax(method, url, data, success) {
         }
     }
 }
+
+//获取元素样式
+function getStyle(element,attr){
+	if(element.currentstyle){
+		return element.currentstyle[attr];
+	}else{
+		return window.getComputedStyle(element,null)[attr];
+	}
+}

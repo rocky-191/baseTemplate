@@ -90,3 +90,9 @@ function randSort2(arr){
 //	return Math.random() - 0.5;
 //})
 //console.log(arr);
+
+
+//获取文件扩展名
+function getFileExtension(filename) {
+	return filename.slice((filename.lastIndexOf(".") - 1 >>> 0) + 2);
+}

@@ -96,3 +96,26 @@ function randSort2(arr){
 function getFileExtension(filename) {
 	return filename.slice((filename.lastIndexOf(".") - 1 >>> 0) + 2);
 }
+
+//利用递归来实现深拷贝，如果对象属性的值是引用类型（Array,Object），那么对该属性进行深拷贝，直到遍历到属性的值是基本类型为止。  
+//作者：守候i
+//链接：https://juejin.im/post/5a0c199851882531926e4297
+//来源：掘金
+function deepClone(obj){    
+  if(!obj&& typeof obj!== 'object'){      
+    return;    
+  }    
+  var newObj= obj.constructor === Array ? [] : {};    
+  for(var key in obj){       
+    if(obj[key]){          
+      if(obj[key] && typeof obj[key] === 'object'){  
+        newObj[key] = obj[key].constructor === Array ? [] : {}; 
+        //递归
+        newObj[key] = deepClone(obj[key]);          
+      }else{            
+        newObj[key] = obj[key];         
+      }       
+    }    
+  }    
+  return newObj; 
+}

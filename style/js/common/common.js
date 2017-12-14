@@ -119,3 +119,5 @@ function deepClone(obj){
   }    
   return newObj; 
 }
+
+//第二种简单方式var newArr2=JSON.parse(JSON.stringify(arr));

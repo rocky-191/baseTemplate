@@ -121,3 +121,55 @@ function deepClone(obj){
 }
 
 //第二种简单方式var newArr2=JSON.parse(JSON.stringify(arr));
+
+/*作者：守候i
+链接：https://juejin.im/post/5a39b2dcf265da431d3cd036
+来源：掘金
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。*/
+//str格式化字符串formatText(123456789.123456)=>123,456,789.123456
+//size-每隔几个字符进行分割 默认3
+//delimiter-分割符 默认','
+function formatText(str,size,delimiter){
+    var _str=str.toString();
+    var _size=size||3,_delimiter=delimiter||',';
+    /* 
+         如果_size是3
+     "\d{1,3}(?=(\d{3})+$)" 
+     */
+    var regText='\\d{1,'+_size+'}(?=(\\d{'+_size+'})+$)';
+    /*   
+    /\d{1,3}(?=(\d{3})+$)/g     这个正则的意思：匹配连续的三个数字，但是这些三个数字不能是字符串的开头1-3个字符  
+     */
+    var reg=new RegExp(regText,'g');
+    /* 
+    (-?) 匹配前面的-号   (\d+)匹配中间的数字   ((\.\d+)?)匹配小数点后面的数字
+    //$0-匹配结果，$1-第一个括号返回的内容----(-?)    $2,$3如此类推  
+    */
+    return _str.replace(/^(-?)(\d+)((\.\d+)?)$/, function ($0, $1, $2, $3) {
+          return $1 + $2.replace(reg, '$&,') + $3;
+    })
+}
+
+//随机循环
+/*作者：守候i
+链接：https://juejin.im/post/5a39b2dcf265da431d3cd036
+来源：掘金
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。*/
+var tipList=['提示1','提示2','提示3','提示4','提示5','提示6','提示7','提示8','提示9'];
+var tipListShow=[];
+tipListShow=Object.assign([],tipList);
+var i=0,timer=null;
+function play() {
+    //随机显示一个，显示了之后，把这个项从tipListShow中删除掉，防止在同一轮重复出现！
+    console.log(tipListShow.splice(Math.floor(Math.random() * tipListShow.length),1)[0]);
+    //当循环完了之后，tipListShow的长度就会是0，然后就重新赋值，准备进行下一轮的随机循环
+    if(tipListShow.length===0){
+        tipListShow=Object.assign([],tipList);
+        i=0;
+    }
+    //如果需要暂停或者停止的，清除这个定时器即可，下次执行就重新这样创建定时器，执行play();！
+    timer=setTimeout(function () {
+        play();
+    },500);
+}
+play();

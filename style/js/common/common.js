@@ -208,3 +208,106 @@ function isFunction(arg) {
     } // end if
     return false;
 }
+
+/**
+ * author:https://github.com/qiu-deqing
+ * 解析一个url并生成window.location对象中包含的域
+ * location:
+ * {
+ *      href: '包含完整的url',
+ *      origin: '包含协议到pathname之前的内容',
+ *      protocol: 'url使用的协议，包含末尾的:',
+ *      username: '用户名', // 暂时不支持
+ *      password: '密码',  // 暂时不支持
+ *      host: '完整主机名，包含:和端口',
+ *      hostname: '主机名，不包含端口'
+ *      port: '端口号',
+ *      pathname: '服务器上访问资源的路径/开头',
+ *      search: 'query string，?开头',
+ *      hash: '#开头的fragment identifier'
+ * }
+ *
+ * @param {string} url 需要解析的url
+ * @return {Object} 包含url信息的对象
+ */
+function parseUrl(url) {
+    var result = {};
+    var keys = ['href', 'origin', 'protocol', 'host',
+                'hostname', 'port', 'pathname', 'search', 'hash'];
+    var i, len;
+    var regexp = /(([^:]+:)\/\/(([^:\/\?#]+)(:\d+)?))(\/[^?#]*)?(\?[^#]*)?(#.*)?/;
+
+    var match = regexp.exec(url);
+
+    if (match) {
+        for (i = keys.length - 1; i >= 0; --i) {
+            result[keys[i]] = match[i] ? match[i] : '';
+        }
+    }
+
+    return result;
+}
+
+/**
+ * author:https://github.com/qiu-deqing
+* 查询指定窗口的视口尺寸，如果不指定窗口，查询当前窗口尺寸
+**/
+function getViewportSize(w) {
+    w = w || window;
+
+    // IE9及标准浏览器中可使用此标准方法
+    if ('innerHeight' in w) {
+        return {
+            width: w.innerWidth,
+            height: w.innerHeight
+        };
+    }
+
+    var d = w.document;
+    // IE 8及以下浏览器在标准模式下
+    if (document.compatMode === 'CSS1Compat') {
+        return {
+            width: d.documentElement.clientWidth,
+            height: d.documentElement.clientHeight
+        };
+    }
+
+    // IE8及以下浏览器在怪癖模式下
+    return {
+        width: d.body.clientWidth,
+        height: d.body.clientHeight
+    };
+}
+
+/**
+ * author:https://github.com/qiu-deqing
+ * 获取指定window中滚动条的偏移量，如未指定则获取当前window
+ * 滚动条偏移量
+ *
+ * @param {window} w 需要获取滚动条偏移量的窗口
+ * @return {Object} obj.x为水平滚动条偏移量,obj.y为竖直滚动条偏移量
+ */
+function getScrollOffset(w) {
+    w =  w || window;
+    // 如果是标准浏览器
+    if (w.pageXOffset != null) {
+        return {
+            x: w.pageXOffset,
+            y: w.pageYOffset
+        };
+    }
+
+    // 老版本IE，根据兼容性不同访问不同元素
+    var d = w.document;
+    if (d.compatMode === 'CSS1Compat') {
+        return {
+            x: d.documentElement.scrollLeft,
+            y: d.documentElement.scrollTop
+        }
+    }
+
+    return {
+        x: d.body.scrollLeft,
+        y: d.body.scrollTop
+    };
+}

@@ -5,6 +5,7 @@ var gulp = require('gulp'), //本地安装gulp所用到的地方
     uglify = require('gulp-uglify'),//压缩js
     autoprefixer = require('gulp-autoprefixer'),//自动添加前缀
     cssmin = require('gulp-clean-css'),//压缩css
+    babel = require('gulp-babel'),//安装npm install --save-dev gulp-babel babel-preset-es2015
     livereload = require('gulp-livereload');
 
 //定义一个testless任务
@@ -13,6 +14,19 @@ gulp.task('testless', function() {
         .pipe(less())
         .pipe(gulp.dest('style/css/page'))
         .pipe(livereload());
+});
+
+
+/**
+ * 编译js文件
+ */
+gulp.task('es6-js', function () {
+    //pages下面的业务代码进行babel处理
+    gulp.src(['style/js/page/test.js'])
+        .pipe(babel({
+            presets: ['es2015']
+        }))
+        .pipe(gulp.dest('style/js/buildJs'));
 });
 
 //定义压缩js文件任务

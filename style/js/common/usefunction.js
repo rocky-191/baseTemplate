@@ -1136,8 +1136,8 @@ function getByName(Name){
 　　}
 }
 
-//判断字符串是否包含汉字
-function pd(str){
+
+function pdWord(){
 	if (escape(str).indexOf("%u") > 0) { 
 		//字符串 str 中含有汉字 
 	} 
